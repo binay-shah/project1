@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="spa-demo">
+<html lang="en" ng-app="spa">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
@@ -9,7 +9,55 @@
   </head>
   <body>
 
-    <p>Hello</p>
+    <div class="container-fluid">
+      <div class="container">
+
+      <!-- Static navbar -->
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a href="index.html" class="pull-left"><div id="logo-img"></div></a>
+            <a class="navbar-brand" href="index.html">Nepal's Largest Marketplace</a>
+
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+
+            <ul id="navlist-right" class="nav navbar-nav navbar-right">
+              <li ><a href="./"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>  My Account</a></li>
+              <li><a class="btn btn-default" href="#" role="button">Submit a Free Add</a></li>
+
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div><!--/.container-fluid -->
+      </nav>
+
+      <!-- Main component for a primary marketing message or call to action -->
+      <div class="jumbotron">
+        <div class="row">
+    <div class="col-xs-4">
+      <div class="inner-addon left-addon">
+        <span class="glyphicon glyphicon-map-marker" style="color:grey"></span>
+      <input type="text" class="form-control" placeholder="All Nepal">
+</div>
+
+    </div>
+    <div class="col-xs-6">
+      <input type="text" class="form-control" placeholder=".col-xs-3">
+    </div>
+    <div class="col-xs-2">
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </div>
+  </div>
+    </div> <!-- /container -->
+       <ui-view></ui-view>
+    </div>
 
   </body>
 </html>

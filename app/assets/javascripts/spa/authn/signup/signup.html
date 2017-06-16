@@ -1,55 +1,54 @@
-<form id="signup-form" name="signup_form" ng-submit="$ctrl.signup()">
-  <span class="invalid"
-        ng-hide="signup_form.$dirty">{{$ctrl.signupForm.errors.full_messages}}</span>
+<div class="container">   
+  <div class="row">  
+    <div class="col-sm-1"></div>
 
-  <div id="signup-email" class="row col-lg-12">
-    <label class="col-xs-3">email</label>
-    <input class="col-xs-9"
-           type="email" 
-           name="signup-email" 
-           ng-model="$ctrl.signupForm.email" 
-           required="required"/>
-    <span class="invalid"
-          ng-hide="signup_form.$dirty">{{$ctrl.signupForm.errors.email}}</span>
-  </div>
+    <div class="col-sm-10">
+      <div class="row">
+          <h2 id="signup-header"><small>Create an Account</small></h2>  
+        <div class="col-sm-5">  
+            
+          <div class="well">        
+            <form>
+            <div class="form-group">
+              <label for="email"><small>Email address:</small></label><span id="required-flag">*</span>
+              <input type="email" class="form-control" id="email">
+            </div>
+            <div class="form-group">
+              <label for="pwd"><small>Password:</small></label><span id="required-flag">*</span>
+              <input type="password" class="form-control" id="pwd" required>
+            </div>
+            <div class="form-group">
+              <label for="pwd"><small>Password:</small></label><span id="required-flag">*</span>
+              <input type="password" class="form-control" id="pwd">
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox"> <span id="required-flag">*</span><small>I hereby agree for processing my personal details by <a href="#">Terms of use</a></small>
+              <lable/>
+              </div>
+              <div class="checkbox">
+              <label><input type="checkbox"> <small> I want to receive news and promotion updates</small>
+              <lable/>
+              </div>            
+            <button type="submit" class="btn btn-primary btn-md btn-block">Submit</button>
+          </form>
+          </div>
+        </div>
+        <div class="col-sm-7">
+          <section id="signup-info">
+              <p>By creating an account you will have access to <Strong>My ads</Strong>, where you </br>can::</p>
+              <ul>
+                <li class="h3"><small>Edit or delete your Ads</small></li>
+                <li class="h3"><small>Check responses for your Ads</small></li>
+                <li class="h3"><small>See saved Ads</small></li>
+              </ul>
+              <hr>           
+              <p>Provide your e-mail address, password and confirm in e-mail which will be sent to you.</p>
+        <section>
+        </div>
+      </div>   
+   </div>
 
-  <div id="signup-name" class="row col-lg-12">
-    <label class="col-xs-3">name</label>
-    <input class="col-xs-9"
-           name="signup-name" 
-           ng-model="$ctrl.signupForm.name" 
-           required="required"/>
-    <span class="invalid"
-          ng-hide="signup_form.$dirty">{{$ctrl.signupForm.errors.name}}</span>
-  </div>
+   <div class="col-sm-1"></div>
 
-  <div id="signup-password" class="row col-lg-12">
-    <label class="col-xs-3 pull-left">password</label>
-    <input class="col-xs-9"
-           type="password" 
-           name="signup-password" 
-           ng-model="$ctrl.signupForm.password" 
-           required="required"/>
-    <span class="invalid"
-          ng-hide="signup_form.$dirty">{{$ctrl.signupForm.errors.password}}</span>
-  </div>
-
-  <div id="signup-password_confirmation" class="row col-lg-12">
-    <label class="col-xs-3 pull-left">password confirmation</label>
-    <input class="col-xs-9"
-           type="password" 
-           name="signup-password_confirmation" 
-           ng-model="$ctrl.signupForm.password_confirmation" 
-           required="required"/>
-    <span class="invalid"
-          ng-hide="signup_form.$dirty">{{$ctrl.signupForm.errors.password_confirmation}}</span>
-  </div>
-
-  <div id="signup-controls" class="row col-lg-12">
-    <button ng-hide="$ctrl.id"
-            ng-disabled="signup_form.$invalid"
-            class="col-xs-3 btn btn-default"
-            type="submit"
-            name="signup-submit">Sign Up</button>
-  </div>
-</form>
+</div> 
+</div>

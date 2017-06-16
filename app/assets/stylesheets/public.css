@@ -1,3 +1,9 @@
+
+ @media (min-width: 1200px) {
+  #container {
+    max-width: 970px;
+    
+  }
 body {
   font-size: 16px;
   color: #fff;
@@ -6,15 +12,15 @@ body {
 }
 
 /** HEADER **/
-#header-nav {
-  postion: relative;
+#container {
+  position: relative;
   background-color: #fff;
   border-radius: 0;
   border: 0;
 }
 
 #logo-img {
-  background: url('../images/restaurant-logo_medium.png') no-repeat;
+  background: url('restaurant-logo_medium.png') no-repeat;
   width: 100px;
   height: 100px;
   margin: 10px 15px 10px 0;
@@ -27,10 +33,11 @@ body {
 
   color: #000;
   font-size: 1em;
-  font-weight: bold;
+  font-family: sans-serif;
+  font-weight: normal;
   margin-top: 0px;
   margin-bottom: 0;
-  line-height: .75;
+  line-height: .90em;
 }
 .navbar-brand a:hover, .navbar-brand a:focus {
   text-decoration: none;
@@ -38,8 +45,8 @@ body {
 
 #navlist-right{
   position: absolute;
-  top :70px;
-  right: 20px;
+  top :60px;
+  right: 15px;
 }
 
 #nav-list {
@@ -76,6 +83,14 @@ body {
 /* add padding  */
 .left-addon input  { padding-left:  30px; }
 .right-addon input { padding-right: 30px; }
+
+
+#searchbox {
+  margin-right: -15px;
+  margin-left: 0px;
+  background-color: #349bcc;
+
+}
 
 #phone {
   margin-top: 5px;
@@ -141,6 +156,8 @@ a[ui-sref="admin.auth"] {
     height: 100px;
     margin: 5px 5px 5px 0;
   }
+
+
   /* End Header */
 }
 

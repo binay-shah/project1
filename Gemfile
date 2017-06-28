@@ -31,7 +31,7 @@ gem 'faker', '~>1.6', '>=1.6.6'
 source 'http://insecure.rails-assets.org' do
   gem 'rails-assets-bootstrap', '~>3.3', '>= 3.3.7'
   gem 'rails-assets-angular', '1.5.9'
-  gem 'rails-assets-angular-ui-router', '~>0.3', '>= 0.3.1'
+  gem 'rails-assets-angular-ui-router', '~>1.0', '<= 1.0'
   gem 'rails-assets-angular-resource', '<= 1.5.9'
   gem 'rails-assets-ng-token-auth', '~>0.0', '>= 0.0.27'
   gem 'rails-assets-angular-cookie' #required by ng-token-auth

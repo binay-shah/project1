@@ -5,14 +5,23 @@
     .module("spa.config", [])
     .constant("spa.config.APP_CONFIG", {
       server_url: "<%= ENV['RAILS_API_URL'] %>",
+      ApiPath:  'http://localhost:3000', 
 
       main_page_html: "<%= asset_path('spa/pages/main.html') %>",
-      signup_page_html: "<%= asset_path('spa/pages/signup_page.html') %>", 
+      signup_page_html: "<%= asset_path('spa/pages/signup_page.html') %>",      
+      authn_signup_html: "<%= asset_path('spa/authn/signup/signup.html') %>",
 
-      
-      
-      authn_signup_html: "<%= asset_path('spa/authn/signup/signup.html') %>"
-      
+      navbar_html: "<%= asset_path('spa/layout/navbar/navbar.html') %>",
+      authn_session_html: "<%= asset_path('spa/authn/authn_session/authn_session.html') %>",
+      login_page_html: "<%= asset_path('spa/pages/login_page.html') %>",
+
+      ad_form_html: "<%= asset_path('spa/Ads/form/adform.html') %>",
+      ad_modal_html: "<%= asset_path('spa/Ads/form/modal/main/modal.html') %>",
+      adPost_page_html: "<%= asset_path('spa/pages/adPost_page.html') %>",
+
+      ad_modal_list_html: "<%= asset_path('spa/Ads/form/modal/list/category-list.html') %>",
+      ad_category_link_html: "<%= asset_path('spa/Ads/form/modal/list/categLink/categoryLink.html') %>",
+      ad_subcategory_list_html: "<%= asset_path('spa/Ads/form/modal/list/subcategoryList/subcategory-list.html') %>"
     });
 
 })();

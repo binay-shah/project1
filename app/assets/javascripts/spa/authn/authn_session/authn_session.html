@@ -1,0 +1,40 @@
+<div class="row">  
+   		<div id="login-form">   			  
+        <h2 id="login-header"><small>Login</small></h2> 		
+		   		<div class="well">   			
+		   			<form ng-submit="$ctrl.login()" name="login_form" novalidate>
+					  <div class="form-group">
+					    <label for="email"><small>Email address:</small></label>
+					    <input type="email" class="form-control" id="email"
+					    name="login_email" 
+					    ng-model="$ctrl.loginForm.email" 
+               			required="required">
+					  </div>
+					  <div class="form-group">
+					    <label for="pwd"><small>Password:</small></label>
+					    <input type="password" class="form-control" id="pwd" 
+					    name="login_password" 
+               			ng-model="$ctrl.loginForm.password" 
+               			required="required">
+					  </div>					 
+					  <div class="checkbox">
+    					<label><input type="checkbox"> </span><small>Remember me </small>
+    					<lable/>
+  					</div>  
+  					<div id="login-submit">
+      <span class="invalid"
+            ng-hide="login_form.$dirty">{{$ctrl.loginForm.errors.full_messages}}</span>		
+
+					  <button type="submit" class="btn btn-primary btn-md btn-block"
+					  	ng-disabled="login_form.$invalid"
+              			name="login_submit">Log in</button>
+
+              			</div>
+            <div >
+              <span><small><a href=""><u>Forgot Password?</u></a></small></span>
+              <span id="register"><small><a ui-sref="accountSignup"><u>Register</u></a></small></span>
+            </div>
+					</form>
+		   		</div>
+		   	</div>      
+    </div>

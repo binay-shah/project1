@@ -4,4 +4,7 @@
  *= require bootstrap
  *= require public
  *= require common
+ *= require signup
+ *= require login
+ *= require modal
  */

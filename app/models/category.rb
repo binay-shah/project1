@@ -3,6 +3,7 @@ class Category < ActiveRecord::Base
   belongs_to :parent_category, :class_name => "Category"
   
   has_many :brand_categories, inverse_of: :category, dependent: :destroy
+  has_many :brands, through: :brand_categories
 
   scope :top_categories, -> { where(parent_id:nil)}
 

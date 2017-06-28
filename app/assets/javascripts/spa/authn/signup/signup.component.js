@@ -14,8 +14,8 @@
     return APP_CONFIG.authn_signup_html;
   }    
 
-  SignupController.$inject = ["$scope","$state","spa.authn.Authn"];
-  function SignupController($scope, $state, Authn) {
+  SignupController.$inject = ["$scope", "$state", "spa.authn.Authn"];
+  function SignupController($scope,  $state, Authn) {
     var vm=this;
     vm.signupForm = {}
     vm.signup = signup;
@@ -27,7 +27,6 @@
     //////////////
     function signup() {
       console.log("signup...");
-      $scope.signup_form.$setPristine();
       Authn.signup(vm.signupForm).then(
         function(response){
           vm.id = response.data.data.id;
@@ -39,6 +38,7 @@
           console.log("signup failure", response, vm);          
         }
       );
+        
     }
 
   }

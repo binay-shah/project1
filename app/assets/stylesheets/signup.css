@@ -1,0 +1,21 @@
+#signup-header{
+	padding-left: 14px;
+}
+#signup-info ul {
+	margin-top: 30px;
+    list-style: none; /* Remove list bullets */    
+}
+
+#signup-info li:before{
+	content: '->';
+	padding-right: 8px;
+	color: blue;
+}
+
+#required-flag{
+	color: red;
+}
+
+.invalid{
+	color: red;
+}

@@ -1,4 +1,3 @@
-<div class="container">   
   <div class="row">  
     <div class="col-sm-1"></div>
 
@@ -7,19 +6,24 @@
           <h2 id="signup-header"><small>Create an Account</small></h2>  
         <div class="col-sm-5">  
             
-          <div class="well">        
-            <form>
+          <div class="well">  
+          <span class="invalid">{{$ctrl.signupForm.errors.full_messages}}</span>      
+            <form id="signup-form" name="signup_form" ng-submit="$ctrl.signup()" novalidate>
             <div class="form-group">
               <label for="email"><small>Email address:</small></label><span id="required-flag">*</span>
-              <input type="email" class="form-control" id="email">
+              <input type="email" class="form-control" id="email" name="signup-email" ng-model="$ctrl.signupForm.email" required="required">
+              <span class="invalid">{{$ctrl.signupForm.errors.email}}</span>
             </div>
             <div class="form-group">
               <label for="pwd"><small>Password:</small></label><span id="required-flag">*</span>
-              <input type="password" class="form-control" id="pwd" required>
+              <input type="password" class="form-control" id="pwd" name="signup-email" ng-model="$ctrl.signupForm.password" required="required">
+              <span class="invalid"
+          ng-hide="signup_form.$dirty">{{$ctrl.signupForm.errors.password}}</span>
             </div>
             <div class="form-group">
               <label for="pwd"><small>Password:</small></label><span id="required-flag">*</span>
-              <input type="password" class="form-control" id="pwd">
+              <input type="password" class="form-control" id="pwd" name="signup-email" ng-model="$ctrl.signupForm.password_confirmation" required="required">
+              <span class="invalid">{{$ctrl.signupForm.errors.password_confirmation}}</span>
             </div>
             <div class="checkbox">
               <label><input type="checkbox"> <span id="required-flag">*</span><small>I hereby agree for processing my personal details by <a href="#">Terms of use</a></small>
@@ -29,7 +33,7 @@
               <label><input type="checkbox"> <small> I want to receive news and promotion updates</small>
               <lable/>
               </div>            
-            <button type="submit" class="btn btn-primary btn-md btn-block">Submit</button>
+            <button ng-disabled="signup_form.$invalid" type="submit" name="signup-submit" class="btn btn-primary btn-md btn-block">Submit</button>
           </form>
           </div>
         </div>
@@ -51,4 +55,3 @@
    <div class="col-sm-1"></div>
 
 </div> 
-</div>

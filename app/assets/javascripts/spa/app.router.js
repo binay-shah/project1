@@ -18,23 +18,75 @@
       // controllerAs: ,
     })
     .state("accountSignup",{
-      url: "/signup",
-      templateUrl: APP_CONFIG.signup_page_html
+      url: "/signup",      
+      component: 'sdSignup'
     })
     .state("authn",{ 
-      url: "/authn",
-      templateUrl: APP_CONFIG.authn_page_html
+      url: "/authn",      
+      component: 'sdAuthnSession'
     })
-    .state("images",{
-      url: "/images/:id",
-      templateUrl: APP_CONFIG.images_page_html
+    .state("adPost",{ 
+      url: "/adPost",      
+      component: 'sdAdForm'
     })
-    .state("things",{
-      url: "/things/:id",
-      templateUrl: APP_CONFIG.things_page_html
-    })
-    ; 
+    .state("modal", {
+      parent: 'adPost',      
+      views: {
+        modal: {
+          component: 'sdModal' 
+               
+        }
+      },
+      onEnter: ["$state",  function($state) {
 
-    //$urlRouterProvider.otherwise("/"); eliminate default route
+        $(document).on("keyup", function(e) {
+          if(e.keyCode == 27) {
+            $(document).off("keyup");
+            $state.go("adPost");
+          }
+        });
+
+        $(document).on('click' ,'.close,  #myModal', function(event) {         
+           console.log(event);    
+          $state.go("adPost");          
+        });
+
+        $(document).on("click", ".modal-content", function(e) {
+          e.stopPropagation();
+        });
+      }]    
+      
+    })
+    .state("list",{
+      parent: 'adPost',
+      
+      views: {
+        modal: {
+          component: 'sdModalList'          
+        }
+        
+      },
+      resolve: {
+            categories:["spa.adForm.AdService",   function(AdService){
+              console.log(AdService.getCategories());
+              return AdService.getCategories();
+            }]
+          }       
+    })
+    .state("list.subcategory",{         
+          component: 'subcategoryList',  
+          params: {categId: null},      
+      resolve: {
+            subcategories:["$transition$",  '$filter' ,'categories', function($transition$,  $filter, categories){
+              console.log($transition$.params().categId);
+                
+               // return categories;              
+              return $filter('filter')(categories, {'id': $transition$.params().categId})[0].sub_category;
+            }]
+          }       
+    })
+    
+    $urlRouterProvider.otherwise("/"); 
+    //eliminate default route
   }
 })();

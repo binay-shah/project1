@@ -5,7 +5,9 @@
     .module("spa", [
       "ui.router",
       "spa.config",
-      "spa.authn"
+      "spa.layout",
+      "spa.authn",
+      "spa.adForm"
            
     ]);
 })();

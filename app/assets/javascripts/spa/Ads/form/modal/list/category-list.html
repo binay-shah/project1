@@ -1,0 +1,32 @@
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span  class="close">&times;</span>
+      <h3><small>Select Category</small></h3>
+    </div>
+    <div class="modal-body">   
+    <div class="container">  
+
+       <div class="row">
+        <div class="col-sm-4">
+          <ul>
+            <categ-link ng-repeat="category in $ctrl.categories" category="category">              
+            </categ-link>
+          </ul>
+        </div>
+        <div class ="col-sm-4">
+          <div ui-view></div>
+        </div>
+
+        <div class="col-sm-4">          
+        </div>
+        
+        </div>
+       </div> 
+      </div>
+    </div>
+  </div>
+</div>

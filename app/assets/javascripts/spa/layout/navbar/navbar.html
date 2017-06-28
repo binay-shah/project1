@@ -1,0 +1,36 @@
+<nav class="navbar">
+  <div class="container headfoot" id="header">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a ui-sref="home" class="pull-left"><div id="logo-img"></div></a>
+      <a class="navbar-brand" ui-sref="home">Nepal's Largest Marketplace</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="myNavbar">
+      
+      
+      <ul  id="navlist-right" class="nav navbar-nav navbar-right ">
+        <li ng-hide="$ctrl.isAuthenticated()">
+          <a id="accountButton" ui-sref="authn" class="btn btn-default btn-md"  role="button"> <span class="glyphicon glyphicon-user"></span> {{$ctrl.getLoginLabel()}}</a>
+        </li>
+
+          <li ng-show="$ctrl.isAuthenticated()" class="dropdown">
+            <a id="accountButton"  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{$ctrl.getLoginLabel()}} <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="#">Separated link</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a ng-click="$ctrl.logout()"><span class="glyphicon glyphicon-off"></span>Log out</a></li>
+            </ul>
+        </li>
+        <li><a id="adButton" ui-sref="adPost" type="button" class="btn btn-primary btn-md" role="button">+ Place a Free Add</a></li>
+      </ul>
+    </div>    
+</nav>

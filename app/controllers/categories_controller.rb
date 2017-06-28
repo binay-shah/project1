@@ -7,7 +7,7 @@ class CategoriesController < ApplicationController
     @category = nil
     @categories = Category.top_categories
 
-    render json: @categories
+    #render json: @categories
   end
 
   # GET /categories/1
@@ -15,9 +15,9 @@ class CategoriesController < ApplicationController
   def show
     @category = Category.find(params[:id])
   # Grab all sub-categories
-  @categories = @category.subcategories.pluck(:name)
+    @categories = @category.subcategories.pluck(:name)
   # We want to reuse the index renderer:
-  render json: @categories
+  #render json: @categories
     #render json: @category
   end
 

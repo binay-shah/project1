@@ -24,7 +24,11 @@
 //= require spa/Ads/ad.module
 //= require spa/Ads/ad.service
 //= require spa/Ads/form/adform.component
-//= require spa/Ads/form/modal/main/modal.component
-//=	require spa/Ads/form/modal/list/category-list.component
-//= require spa/Ads/form/modal/list/categLink/categoryLink.component
-//= require spa/Ads/form/modal/list/subcategoryList/subcategory-list.component
+//= require spa/Ads/form/modal/modal.module
+//= require spa/Ads/form/modal/main-list/main_list.module
+//= require spa/Ads/form/modal/main-list/main_list.component
+//= require spa/Ads/form/modal/main-list/item/item.component
+//=	require spa/Ads/form/modal/sub-list/sub_list.module
+//=	require spa/Ads/form/modal/sub-list/main-category/category_list.component
+//=	require spa/Ads/form/modal/sub-list/main-category/item/item.component
+//= require spa/Ads/form/modal/sub-list/categLink/categoryLink.component

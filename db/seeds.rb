@@ -11,13 +11,26 @@ Category.destroy_all
 categories = Category.create([
 	{id: 1, name: 'Vehicles', parent_id: ''}, 
 	{id: 2, name: 'Cars', parent_id: 1},
-	{id: 3, name: 'Electronics and Appliances', parent_id: ''},
+	{id: 3, name: 'Electronics and Home Appliances', parent_id: ''},
 	{id: 4, name: 'Computer and Laptops', parent_id: 3},
 	{id: 5, name: 'Washing machines', parent_id: 3},
-	{id: 6, name: 'Mobiles', parent_id: ''},
+	{id: 6, name: 'Mobiles Phones & Accessories', parent_id: ''},
 	{id: 7, name: 'Mobiles Phones', parent_id: 6},
 	{id: 8, name: 'Tablets', parent_id: 6},
-	{id: 9, name: 'Commercials Vehicles', parent_id: 1}
+	{id: 9, name: 'Commercials Vehicles', parent_id: 1},
+	{id: 10, name: 'Properties', parent_id: ''},
+	{id: 11, name: 'Properties for Rent', parent_id: 10},
+	{id: 12, name: 'Properties for Sale', parent_id: 10},
+	{id: 13, name: 'Apartments for Rent', parent_id: 11},
+	{id: 14, name: 'Home & Garden', parent_id: ''},
+	{id: 15, name: 'Fashion & Beauty', parent_id: ''},
+	{id: 16, name: 'Pets', parent_id: ''},
+	{id: 17, name: 'Kids & Babies', parent_id: ''},
+	{id: 18, name: 'Sporting Goods & Bikes', parent_id: ''},
+	{id: 19, name: 'Hobbies, Music, Art & Books', parent_id: ''},
+	{id: 20, name: 'Jobs', parent_id: ''},
+	{id: 21, name: 'Business & Industrial', parent_id: ''},
+	{id: 22, name: 'Services', parent_id: ''}	
 	]);
 
 Brand.destroy_all

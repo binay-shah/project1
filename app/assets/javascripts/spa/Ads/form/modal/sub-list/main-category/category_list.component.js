@@ -2,36 +2,31 @@
   "use strict";
 
   angular
-    .module("spa.adForm")
-    .component("sdModalList", {
+    .module("modal.subList")
+    .component("modalSubMainlist", {
       templateUrl: templateUrl,
-      controller: AdModalListController,
+      controller: ModalSubMainlistController,
       bindings: { 'categories': '<' }
     });
 
 
   templateUrl.$inject = ["spa.config.APP_CONFIG"];
   function templateUrl(APP_CONFIG) {
-    return APP_CONFIG.ad_modal_list_html;
+    return APP_CONFIG.ad_modal_sub_mainlist_html;
   }    
 
 
-  AdModalListController.$inject = ["$scope"];
-  function AdModalListController($scope) {
+  ModalSubMainlistController.$inject = ["$scope"];
+  function ModalSubMainlistController($scope) {
     var $ctrl=this;
     
 
     //console.log($ctrl.categories);  
 
     $ctrl.$onInit = function() {
-      console.log("AdModalListController",$scope);
+      console.log("ModalSubMainlistController",$scope);
     }    
     //////////////////////////////////// 
-    
-  
-  
-  
-   
 
 }
 

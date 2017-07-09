@@ -13,16 +13,13 @@
        <div class="row">
         <div class="col-sm-4">
           <ul>
-            <categ-link ng-repeat="category in $ctrl.categories" category="category">              
-            </categ-link>
+            <category-item ng-repeat="category in $ctrl.categories" category="category">              
+            </category-item>
           </ul>
         </div>
-        <div class ="col-sm-4">
+        <div class ="col-sm-8">
           <div ui-view></div>
-        </div>
-
-        <div class="col-sm-4">          
-        </div>
+        </div>        
         
         </div>
        </div> 

@@ -1,29 +1,12 @@
-<!-- The Modal -->
-<div id="myModal" class="modal">
+<div class="row">
+<div class="col-sm-4">
+  <ul>
+    <category-item ng-repeat="category in $ctrl.categories" category="category">              
+    </category-item>
+  </ul>
+</div>
+<div class ="col-sm-8">
+  <ui-view></ui-view>
+</div>        
 
-  <!-- Modal content -->
-  <div class="modal-content">
-    <div class="modal-header">
-      <span  class="close">&times;</span>
-      <h3><small>Select Category</small></h3>
-    </div>
-    <div class="modal-body">   
-    <div class="container">  
-
-       <div class="row">
-        <div class="col-sm-4">
-          <ul>
-            <category-item ng-repeat="category in $ctrl.categories" category="category">              
-            </category-item>
-          </ul>
-        </div>
-        <div class ="col-sm-8">
-          <div ui-view></div>
-        </div>        
-        
-        </div>
-       </div> 
-      </div>
-    </div>
-  </div>
 </div>

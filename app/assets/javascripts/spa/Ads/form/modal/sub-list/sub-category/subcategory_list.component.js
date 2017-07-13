@@ -2,10 +2,10 @@
   "use strict";
 
   angular
-    .module("spa.adForm")
-    .component("subcategoryList", {
+    .module("modal.subList")
+    .component("subCategoryOne", {
       templateUrl: templateUrl,
-      controller: AdSubCategoriesListController,
+      controller: SubCategoryOneListController,
       bindings: { 'subcategories': '<' }
     });
 
@@ -15,15 +15,15 @@
     return APP_CONFIG.ad_subcategory_list_html;
   }    
 
-  AdSubCategoriesListController.$inject = ["$scope"];
-  function AdSubCategoriesListController($scope) {
+  SubCategoryOneListController.$inject = ["$scope"];
+  function SubCategoryOneListController($scope) {
     var $ctrl=this;
     
 
-    console.log($ctrl.subcategories);  
+    //console.log($ctrl.subcategories);  
 
     $ctrl.$onInit = function() {      
-      console.log("AdSubCategoriesListController",$scope);
+      console.log("SubCategoryOneListController",$scope);
     }    
     //////////////////////////////////// 
     return;  

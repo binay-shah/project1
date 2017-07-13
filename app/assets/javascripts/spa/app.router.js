@@ -58,68 +58,54 @@
       }]    
       
     })
-    .state("modal.mainList",{        
-      views: {
-        modal: {
-          component: 'modalMainlist'          
-        }
-        
-      },
+    .state("modal.mainList", {        
+      
+      component: 'modalMainlist',    
+      
       resolve: {
-            categories:["spa.adForm.AdService",   function(AdService){
-              console.log(AdService.getCategories());
-              return AdService.getCategories();
+            categories:["spa.adForm.AdService",   function(AdService){              
+              return AdService.getCategoriesFromServer();
             }]
           }       
     })
    .state("modal.sublist", {   
-      abstract: true,
-      views: {
-        modal: {
-          templateUrl: APP_CONFIG.ad_modalSublist_html          
-        }
-        
-      }       
+      //parent: "modal.mainList",
+      abstract: true,      
+      templateUrl: APP_CONFIG.ad_modalSublist_html    
+            
     })
-    .state("modal.sublist.mainCategory",{  
-      views: {
-        modal: {
-          component: 'modalSubMainlist'
-        }
-      },
+    .state("mainCategory",{  
+      parent: "modal.sublist",
+      component: 'modalSubMainlist',      
       resolve: {
-            categories:["spa.adForm.AdService",   function(AdService){
-              console.log(AdService.getCategories());
+            categories:["spa.adForm.AdService", '$transition$',    function(AdService,$transition$){
+              console.log("mainCategory:"+AdService.getCategories());              
               return AdService.getCategories();
             }]
           }       
     })
-   /* .state("list.subcategory",{         
-          component: 'subcategoryList',  
+    .state("subCategoryOne",{   
+          parent:  'mainCategory',     
+          component: 'subCategoryOne',  
           params: {categId: null},      
-      resolve: {
+          resolve: {
             subcategories:["$transition$",  '$filter' ,'categories', function($transition$,  $filter, categories){
-              console.log("subcategories: "+$transition$.params().categId);
-                
-               // return categories;              
+              console.log("subcategories: "+$transition$.params().categId);                           
               return $filter('filter')(categories, {'id': $transition$.params().categId})[0].sub_category;
             }]
           }       
     })
-    .state("list.subcategory.sub2",{   
-                
-          component: 'subcategoryList2',  
+    .state("subCategoryTwo",{   
+          parent:  'subCategoryOne',     
+          component: 'subCategoryTwo',  
           params: {id: null},      
-      resolve: {
-            subcateg2:["$transition$",  '$filter' ,'subcategories', function($transition$,  $filter, subcategories){
-              console.log("subcategories2: "+$transition$.params().id);
-                
-               // return categories;              
-              //return subcategories; 
+          resolve: {
+            subcategories2:["$transition$",  '$filter' ,'subcategories', function($transition$,  $filter, subcategories){
+              console.log("subcategories2: "+$transition$.params().id);            
               return $filter('filter')(subcategories, {'id': $transition$.params().id})[0].sub_category;
             }]
           }       
-    })*/
+    })
     
     $urlRouterProvider.otherwise("/"); 
     //eliminate default route

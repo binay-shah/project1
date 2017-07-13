@@ -31,4 +31,9 @@
 //=	require spa/Ads/form/modal/sub-list/sub_list.module
 //=	require spa/Ads/form/modal/sub-list/main-category/category_list.component
 //=	require spa/Ads/form/modal/sub-list/main-category/item/item.component
-//= require spa/Ads/form/modal/sub-list/categLink/categoryLink.component
+//=	require spa/Ads/form/modal/sub-list/main-category/category_list.component
+//=	require spa/Ads/form/modal/sub-list/sub-category/subcategory_list.component
+//=	require spa/Ads/form/modal/sub-list/sub-category/item/item.component
+//=	require spa/Ads/form/modal/sub-list/sub-category2/subcategory2_list.component
+//=	require spa/Ads/form/modal/sub-list/sub-category2/item/item.component
+

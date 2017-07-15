@@ -5,7 +5,7 @@
     .module("modal.subList")
     .component("subCategoryTwo", {
       templateUrl: templateUrl,
-      controller: AdSubCategoriesListTwoController,
+      controller: SubCategoriesTwoListController,
       bindings: { 'subcategories2': '<' }
     });
 
@@ -15,17 +15,17 @@
     return APP_CONFIG.ad_subcategory2_list_html;
   }    
 
-  AdSubCategoriesListTwoController.$inject = ["$scope", "$state", "spa.adForm.AdService"];
-  function AdSubCategoriesListTwoController($scope,$state, AdService) {
+  SubCategoriesTwoListController.$inject = ["$scope", "$state", "spa.adForm.AdService", "$rootScope"];
+  function SubCategoriesTwoListController($scope,$state, AdService, $rootScope) {
     var $ctrl=this;
     
     $ctrl.onSelect = onSelect;
-    console.log($ctrl.subcategories2);  
+    
     if($ctrl.subcategories2.length == 0)
       $state.go("adPost"); 
 
     $ctrl.$onInit = function() {      
-      console.log("AdSubCategoriesListTwoController",$scope);
+      console.log("SubCategoriesListTwoController",$scope);
     }    
     //////////////////////////////////// 
     return;  
@@ -33,6 +33,8 @@
     function onSelect(subCategoryTwo){
       //console.log("onSelect: "+id);
       AdService.setSelectedCategoryTwo(subCategoryTwo);
+      $rootScope.$broadcast('modal:category', {select: true});
+      $state.go("adPost");
     }
   }
 

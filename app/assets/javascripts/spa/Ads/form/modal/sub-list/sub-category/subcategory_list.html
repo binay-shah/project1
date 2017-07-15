@@ -1,7 +1,7 @@
 <div class="row">
 <div class="col-sm-4">
 <ul>	
-	<sub-item ng-repeat="subcategory in $ctrl.subcategories" subcategory="subcategory">              
+	<sub-item ng-repeat="subcategory in $ctrl.subcategories" subcategory="subcategory" on-select="$ctrl.onSelect(subcategory)">              
     </sub-item>
 </ul>
 </div>

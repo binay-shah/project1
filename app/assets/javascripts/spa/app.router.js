@@ -78,8 +78,7 @@
       parent: "modal.sublist",
       component: 'modalSubMainlist',      
       resolve: {
-            categories:["spa.adForm.AdService", '$transition$',    function(AdService,$transition$){
-              console.log("mainCategory:"+AdService.getCategories());              
+            categories:["spa.adForm.AdService", '$transition$',    function(AdService,$transition$){                          
               return AdService.getCategories();
             }]
           }       
@@ -89,8 +88,7 @@
           component: 'subCategoryOne',  
           params: {categId: null},      
           resolve: {
-            subcategories:["$transition$",  '$filter' ,'categories', function($transition$,  $filter, categories){
-              console.log("subcategories: "+$transition$.params().categId);                           
+            subcategories:["$transition$",  '$filter' ,'categories', function($transition$,  $filter, categories){                                       
               return $filter('filter')(categories, {'id': $transition$.params().categId})[0].sub_category;
             }]
           }       
@@ -100,8 +98,7 @@
           component: 'subCategoryTwo',  
           params: {id: null},      
           resolve: {
-            subcategories2:["$transition$",  '$filter' ,'subcategories', function($transition$,  $filter, subcategories){
-              console.log("subcategories2: "+$transition$.params().id);            
+            subcategories2:["$transition$",  '$filter' ,'subcategories', function($transition$,  $filter, subcategories){                     
               return $filter('filter')(subcategories, {'id': $transition$.params().id})[0].sub_category;
             }]
           }       

@@ -1,5 +1,13 @@
+<!--
 <li ui-sref-active="categoryselected">
       <a ui-sref="subCategoryOne({ categId: $ctrl.category.id})">          
+        {{ $ctrl.category.name}}<span ng-if="$ctrl.category.sub_category.length > 0"> >>
+      </a>   
+</li>
+-->
+
+<li ui-sref-active="categoryselected">
+      <a ng-click="$ctrl.onSelect({mainCategory: $ctrl.category})">          
         {{ $ctrl.category.name}}<span ng-if="$ctrl.category.sub_category.length > 0"> >>
       </a>   
 </li>

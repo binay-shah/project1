@@ -17,7 +17,8 @@
     	
   	  service.getCategoriesFromServer = function () {
   	    return $http.get(APP_CONFIG.ApiPath + '/categories').then(function (response) {	 
-          service.categories = response.data   	
+          service.categories = response.data 
+          service.selectedCategory = {};  	
   	      return service.categories;
   	    });
     	};
@@ -31,9 +32,10 @@
       }
       
 
-      service.setSelectedCategory = function(item){
+      service.setSelectedCategoryMain = function(item){
         service.selectedCategory.one = null;
-         service.selectedCategory.item=item;         
+        service.selectedCategory.two = null;  
+        service.selectedCategory.main=item;         
 
       }
 
@@ -44,7 +46,7 @@
 
       service.setSelectedCategoryTwo = function(item){
         service.selectedCategory.two = item;  
-        console.log(service.selectedCategory.two);      
+        //console.log(service.selectedCategory.two);      
         //console.log("service:"+ service.selectedCategory.two.id+" "+ service.selectedCategory.two.name);
       }
     }

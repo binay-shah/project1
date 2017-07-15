@@ -1,11 +1,18 @@
+<!--
 <div class="col-sm-2"> 
-
-  <a ui-sref="mainCategory">
+  <a ui-sref="subCategoryOne({categId: $ctrl.category.id})">
     <div class="form-category">
       <img src= <%= image_url('car.svg') %>  width="50" height="50">
       <span>{{$ctrl.category.name}}</span>
     </div>
   </a>
 </div>
-
-        
+-->
+<div class="col-sm-2"> 
+  <a ng-click="$ctrl.onSelect({mainCategory: $ctrl.category})">
+    <div class="form-category">
+      <img src= <%= image_url('car.svg') %>  width="50" height="50">
+      <span>{{$ctrl.category.name}}</span>
+    </div>
+  </a>
+</div>       

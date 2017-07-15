@@ -15,16 +15,32 @@
   }    
 
 
-  AdFormController.$inject = ["$scope", "$state", "spa.authn.Authn", "$rootScope", '$element'];
-  function AdFormController($scope,  $state, Authn, $rootScope, $element) {
+  AdFormController.$inject = ["$scope", "$state", "spa.authn.Authn", "$rootScope", '$element', 'spa.adForm.AdService'];
+  function AdFormController($scope,  $state, Authn, $rootScope, $element, AdService) {
     var vm=this;
+    vm.select = false;
+    vm.selectedCategory = null;
     
 
-    vm.$onInit = function() {
+    
+      vm.$onInit = function() {
       console.log("AdFormController",$scope);
     }
+
+    var cancelListener = $rootScope.$on('modal:category', function (event, data) {
+      console.log("Event: ", event);
+      console.log("Data: ", data);    
+      vm.selectedCategory = AdService.getSelectedCategory();
+      console.log(vm.selectedCategory);
+      vm.select = true;
+  });
+
+  vm.$onDestroy = function () {
+    cancelListener();
+  };
+
     return;
-    //////////////
+    ////////////////////////////
 
      
     

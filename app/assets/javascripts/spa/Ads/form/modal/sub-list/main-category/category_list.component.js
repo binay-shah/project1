@@ -16,17 +16,24 @@
   }    
 
 
-  ModalSubMainlistController.$inject = ["$scope"];
-  function ModalSubMainlistController($scope) {
+  ModalSubMainlistController.$inject = ["$scope", "spa.adForm.AdService", "$state"];
+  function ModalSubMainlistController($scope, AdService, $state) {
     var $ctrl=this;
-    
+    $ctrl.onSelect = onSelect;
 
-    //console.log($ctrl.categories);  
+      
 
     $ctrl.$onInit = function() {
       console.log("ModalSubMainlistController",$scope);
     }    
     //////////////////////////////////// 
+    return;
+
+    function onSelect(mainCategory){
+      console.log("onSelect: "+mainCategory.id);
+      AdService.setSelectedCategoryMain(mainCategory);      
+      $state.go('subCategoryOne', { 'categId': mainCategory.id});
+    }
 
 }
 

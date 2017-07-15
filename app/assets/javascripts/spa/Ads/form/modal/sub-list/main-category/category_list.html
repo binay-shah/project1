@@ -1,7 +1,7 @@
 <div class="row">
 <div class="col-sm-4">
   <ul>
-    <category-item ng-repeat="category in $ctrl.categories" category="category">              
+    <category-item ng-repeat="category in $ctrl.categories" category="category" on-select="$ctrl.onSelect(category)">   
     </category-item>
   </ul>
 </div>

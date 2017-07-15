@@ -5,7 +5,7 @@
     .module("modal.subList")
     .component("subItem", {
       templateUrl: templateUrl,      
-      bindings: { 'subcategory': '<' }
+      bindings: { 'subcategory': '<', 'onSelect': '&'  }
     });
 
 

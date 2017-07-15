@@ -16,16 +16,23 @@
   }    
 
 
-  AdModalMainlistController.$inject = ["$scope"];
-  function AdModalMainlistController($scope) {
-    var $ctrl=this;       
+  AdModalMainlistController.$inject = ["$scope", 'spa.adForm.AdService', '$state'];
+  function AdModalMainlistController($scope, AdService, $state) {
+    var $ctrl=this;  
+    $ctrl.onSelect = onSelect;     
 
     $ctrl.$onInit = function() {
-      console.log("AdModalMainlistController",$scope);
+      console.log("ModalMainlistController",$scope);
 
     }    
     //////////////////////////////////// 
     return;  
+
+    function onSelect(mainCategory){
+      //console.log("onSelect: "+id);
+      AdService.setSelectedCategoryMain(mainCategory);      
+      $state.go('subCategoryOne', { 'categId': mainCategory.id});
+    }
 
 }
 

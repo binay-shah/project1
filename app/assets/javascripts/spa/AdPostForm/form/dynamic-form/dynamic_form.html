@@ -1,0 +1,27 @@
+<div ng-repeat="field in $ctrl.formFields.fields">
+	
+	<ng-form name="dynamicForm">
+		<div ng-if="field.type=='text'" class="form-group">
+		      <label class="col-sm-2 control-label">{{field.label}}</label>
+		      <div class="col-sm-6">
+		        <input type="{{ field.type }}" name="field.name" id="{{field.name}}" ng-model="field.data"  class="form-control" required/>		         
+		      </div>
+    	</div>
+
+    	<!-- SELECT FIELDS -->
+	    <div ng-if="field.type=='select'" class="form-group" >
+	      <label class="col-sm-2 control-label">{{field.label}}</label>
+	      <div class="col-sm-6">
+	        <select ng-model="field.data" ng-options="option.name for option in field.options" class="form-control" required/>
+	      </div>      
+	    </div>
+
+	    <div ng-if="field.type=='textarea'" class="form-group" >
+	      <label class="col-sm-2 control-label">{{field.label}}</label>
+	      <div class="col-sm-6">
+	        <input type="{{ field.type }}" name="field.name" id="{{field.name}}" ng-model="field.data"  class="form-control" required/>
+	      </div>      
+	    </div>
+
+	</ng-form>
+</div>

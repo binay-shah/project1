@@ -23,14 +23,15 @@
     
 
     
-    vm.$onInit = function() {
+      vm.$onInit = function() {
       console.log("AdFormController",$scope);
     }
 
     var cancelListener = $rootScope.$on('modal:category', function (event, data) {
-      //console.log("Event: ", event);
-      //console.log("Data: ", data);    
-      vm.selectedCategory = AdService.getSelectedCategory();      
+      console.log("Event: ", event);
+      console.log("Data: ", data);    
+      vm.selectedCategory = AdService.getSelectedCategory();
+      console.log(vm.selectedCategory);
       vm.select = true;
   });
 

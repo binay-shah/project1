@@ -34,7 +34,7 @@
       if(subCategoryOne.sub_category.length > 0)     
         $state.go('subCategoryTwo', { 'id': subCategoryOne.id});
       else{
-        $rootScope.$broadcast('modal:category', {select: true, selectedItem: subCategoryOne});
+        $rootScope.$broadcast('modal:category', {select: true});
         $state.go("adPost");
       }
     }

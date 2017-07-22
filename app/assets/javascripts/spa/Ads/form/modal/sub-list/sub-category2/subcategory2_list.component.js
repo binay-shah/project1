@@ -33,7 +33,7 @@
     function onSelect(subCategoryTwo){
       //console.log("onSelect: "+id);
       AdService.setSelectedCategoryTwo(subCategoryTwo);
-      $rootScope.$broadcast('modal:category', {select: true, selectedItem: subCategoryTwo});
+      $rootScope.$broadcast('modal:category', {select: true});
       $state.go("adPost");
     }
   }

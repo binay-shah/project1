@@ -21,19 +21,20 @@
 //= require spa/layout/layout.module
 //= require spa/layout/navbar/navbar.component
 
-//= require spa/Ads/ad.module
-//= require spa/Ads/ad.service
-//= require spa/Ads/form/adform.component
-//= require spa/Ads/form/modal/modal.module
-//= require spa/Ads/form/modal/main-list/main_list.module
-//= require spa/Ads/form/modal/main-list/main_list.component
-//= require spa/Ads/form/modal/main-list/item/item.component
-//=	require spa/Ads/form/modal/sub-list/sub_list.module
-//=	require spa/Ads/form/modal/sub-list/main-category/category_list.component
-//=	require spa/Ads/form/modal/sub-list/main-category/item/item.component
-//=	require spa/Ads/form/modal/sub-list/main-category/category_list.component
-//=	require spa/Ads/form/modal/sub-list/sub-category/subcategory_list.component
-//=	require spa/Ads/form/modal/sub-list/sub-category/item/item.component
-//=	require spa/Ads/form/modal/sub-list/sub-category2/subcategory2_list.component
-//=	require spa/Ads/form/modal/sub-list/sub-category2/item/item.component
+//= require spa/AdPostForm/ad.module
+//= require spa/AdPostForm/ad.service
+//= require spa/AdPostForm/form/adform.component
+//= require spa/AdPostForm/form/modal/modal.module
+//= require spa/AdPostForm/form/modal/main-list/main_list.module
+//= require spa/AdPostForm/form/modal/main-list/main_list.component
+//= require spa/AdPostForm/form/modal/main-list/item/item.component
+//=	require spa/AdPostForm/form/modal/sub-list/sub_list.module
+//=	require spa/AdPostForm/form/modal/sub-list/main-category/category_list.component
+//=	require spa/AdPostForm/form/modal/sub-list/main-category/item/item.component
+//=	require spa/AdPostForm/form/modal/sub-list/main-category/category_list.component
+//=	require spa/AdPostForm/form/modal/sub-list/sub-category/subcategory_list.component
+//=	require spa/AdPostForm/form/modal/sub-list/sub-category/item/item.component
+//=	require spa/AdPostForm/form/modal/sub-list/sub-category2/subcategory2_list.component
+//=	require spa/AdPostForm/form/modal/sub-list/sub-category2/item/item.component
+//=	require spa/AdPostForm/form/dynamic-form/dynamic_form.component
 

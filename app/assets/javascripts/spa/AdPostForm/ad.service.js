@@ -12,6 +12,7 @@
       service.selectedCategory = {};
       service.selectedCategory.one={};
       service.selectedCategory.two={};
+      service.formData = null;
 
       
     	
@@ -23,7 +24,16 @@
   	    });
     	};
 
+      service.getFormFields = function(){
+         return $http.get(APP_CONFIG.ad_post_formData).then(function (response) {  
+          //console.log(response.data); 
+          service.formData  =response.data;
+          return service.formData;
+        });
+      }
+
       service.getCategories = function(){
+        //console.log(service.categories); 
         return service.categories;
       };
 

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :images, except: [:new, :edit]
 	defaults format: :json do 
   resources :ad_categories, except: [:new, :edit]
   resources :ads, except: [:new, :edit]

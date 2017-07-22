@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170614063720) do
+ActiveRecord::Schema.define(version: 20170722034945) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,6 +28,9 @@ ActiveRecord::Schema.define(version: 20170614063720) do
 
   create_table "ads", force: :cascade do |t|
     t.text     "title"
+    t.text     "price"
+    t.integer  "creator_id"
+    t.text     "details"
     t.text     "description"
     t.integer  "brand_id"
     t.datetime "created_at",  null: false
@@ -60,6 +63,14 @@ ActiveRecord::Schema.define(version: 20170614063720) do
   end
 
   add_index "categories", ["parent_id"], name: "index_categories_on_parent_id", using: :btree
+
+  create_table "images", force: :cascade do |t|
+    t.integer  "ad_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "images", ["ad_id"], name: "index_images_on_ad_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "provider",               default: "email", null: false
@@ -98,4 +109,5 @@ ActiveRecord::Schema.define(version: 20170614063720) do
   add_foreign_key "ads", "brands"
   add_foreign_key "brand_categories", "brands"
   add_foreign_key "brand_categories", "categories"
+  add_foreign_key "images", "ads"
 end

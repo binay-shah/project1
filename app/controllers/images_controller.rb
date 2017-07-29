@@ -6,13 +6,13 @@ class ImagesController < ApplicationController
   def index
     @images = Image.all
 
-    render json: @images
+    #render json: @images
   end
 
   # GET /images/1
   # GET /images/1.json
   def show
-    render json: @image
+    
   end
 
   # POST /images
@@ -52,6 +52,6 @@ class ImagesController < ApplicationController
     end
 
     def image_params
-      params.require(:image).permit(:ad_id)
+      params.require(:image).permit(:position, :ad_id)
     end
 end

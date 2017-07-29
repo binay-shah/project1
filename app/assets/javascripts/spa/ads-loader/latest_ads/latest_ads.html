@@ -1,0 +1,14 @@
+
+<div class="row">
+	<h1><small>Latest Ads</small></h1>
+</div>
+<div class="row">
+	<div class="col-sm-4 " ng-repeat="item in $ctrl.latestAds">		
+			<div class="ad-card">
+				<img class="img-card" ng-src="{{item.images[0].url}}" />	
+				<div class="card-container">
+					{{item.title}}	
+				</div>
+			</div>		
+	</div>
+</div>

@@ -5,7 +5,7 @@
     .module("spa.adForm")
     .service("spa.adForm.AdService", AdService);
 
-    AdService.$inject = ['$http', "spa.config.APP_CONFIG"]
+    AdService.$inject = ['$http', "spa.config.APP_CONFIG"];
     function AdService($http, APP_CONFIG){
     	var service = this;
       service.categories = null;
@@ -13,7 +13,6 @@
       service.selectedCategory.one={};
       service.selectedCategory.two={};
       service.formData = null;
-
       
     	
   	  service.getCategoriesFromServer = function () {

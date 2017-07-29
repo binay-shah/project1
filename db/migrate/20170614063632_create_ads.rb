@@ -7,6 +7,7 @@ class CreateAds < ActiveRecord::Migration
       t.text :details
       t.text :description
       t.references :brand, index: true, foreign_key: true
+      t.references :category, index: true, foreign_key: true
 
       t.timestamps null: false
     end

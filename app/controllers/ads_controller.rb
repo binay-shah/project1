@@ -6,13 +6,13 @@ class AdsController < ApplicationController
   def index
     @ads = Ad.all
 
-    render json: @ads
+    #render json: @ads
   end
 
   # GET /ads/1
   # GET /ads/1.json
   def show
-    render json: @ad
+    #render json: @ad
   end
 
   # POST /ads

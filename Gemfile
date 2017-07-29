@@ -6,6 +6,8 @@ gem 'rails-api', '~>0.4', '>=0.4.0'
 gem 'pry-rails', '~>0.3', '>=0.3.4'
 gem 'jbuilder', '~> 2.0', '>=2.6.0'
 gem 'devise_token_auth', '~>0.1', '>=0.1.39'
+gem 'exifr', '~> 1.2', '>= 1.2.5'
+gem 'mini_magick', '~> 4.5', '>= 4.5.1'
 gem 'rack-cors', '~>0.4', '>=0.4.0', :require => 'rack/cors'
 
 gem 'sass-rails', '~> 5.0', '>=3.4.22'
@@ -25,6 +27,8 @@ gem 'puma', '~>3.6', '>=3.6.0', :platforms=>:ruby
 gem 'database_cleaner', '~>1.5', '>=1.5.3'
 gem 'factory_girl_rails', '~>4.7', '>=4.7.0'
 gem 'faker', '~>1.6', '>=1.6.6'
+gem 'mongoid', '~>5.1', '>=5.1.5'
+gem "paperclip", "~> 5.0.0"
 
 
 #source 'https://rails-assets.org' do

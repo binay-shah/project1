@@ -7,7 +7,8 @@
       "spa.config",
       "spa.layout",
       "spa.authn",
-      "spa.adForm"
+      "spa.adForm",
+      "spa.adList"
            
     ]);
 })();

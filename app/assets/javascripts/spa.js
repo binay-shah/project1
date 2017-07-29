@@ -38,3 +38,9 @@
 //=	require spa/AdPostForm/form/modal/sub-list/sub-category2/item/item.component
 //=	require spa/AdPostForm/form/dynamic-form/dynamic_form.component
 
+//= require spa/ads-loader/ad_list.module
+//=	require spa/ads-loader/latest_ads/latest_ads.component
+//= require spa/ads-loader/ads_loader.service
+
+
+

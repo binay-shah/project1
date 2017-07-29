@@ -78,6 +78,20 @@ module ApiHelper
   end
 end
 
+#returns a hash without the noisy content property
+  def except_content original
+    if original[:image_content] && original[:image_content][:content] 
+      clone=original.clone
+      bytes=original[:image_content][:content].size
+      clone[:image_content]=original[:image_content].clone
+      clone[:image_content][:content]="#{bytes} bytes"
+      return clone
+    else
+      return original
+    end
+  end
+end
+
 RSpec.shared_examples "resource index" do |model|
   let!(:resources) { (1..5).map {|idx| FactoryGirl.create(model) } }
   let!(:apply_roles) { apply_organizer user, resources }

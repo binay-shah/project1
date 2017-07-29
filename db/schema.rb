@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170722034945) do
+ActiveRecord::Schema.define(version: 20170723084119) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,11 +33,13 @@ ActiveRecord::Schema.define(version: 20170722034945) do
     t.text     "details"
     t.text     "description"
     t.integer  "brand_id"
+    t.integer  "category_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
 
   add_index "ads", ["brand_id"], name: "index_ads_on_brand_id", using: :btree
+  add_index "ads", ["category_id"], name: "index_ads_on_category_id", using: :btree
 
   create_table "brand_categories", force: :cascade do |t|
     t.integer  "category_id"
@@ -65,9 +67,14 @@ ActiveRecord::Schema.define(version: 20170722034945) do
   add_index "categories", ["parent_id"], name: "index_categories_on_parent_id", using: :btree
 
   create_table "images", force: :cascade do |t|
+    t.string   "position"
     t.integer  "ad_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
   end
 
   add_index "images", ["ad_id"], name: "index_images_on_ad_id", using: :btree
@@ -107,6 +114,7 @@ ActiveRecord::Schema.define(version: 20170722034945) do
   add_foreign_key "ad_categories", "ads"
   add_foreign_key "ad_categories", "categories"
   add_foreign_key "ads", "brands"
+  add_foreign_key "ads", "categories"
   add_foreign_key "brand_categories", "brands"
   add_foreign_key "brand_categories", "categories"
   add_foreign_key "images", "ads"

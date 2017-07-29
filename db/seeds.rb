@@ -33,7 +33,7 @@ categories = Category.create([
 	{id: 22, name: 'Services', parent_id: ''}	
 	]);
 
-Brand.destroy_all
+#Brand.destroy_all
 
 brands = Brand.create([
 		{id: 1, name: 'Hyuandai'},
@@ -43,7 +43,7 @@ brands = Brand.create([
 
 	]);
 
-BrandCategory.destroy_all
+#BrandCategory.destroy_all
 
 brands_categories = BrandCategory.create([
 		{brand_id: 1, category_id: 2},
@@ -53,17 +53,17 @@ brands_categories = BrandCategory.create([
 
 	]);
 
-Ad.destroy_all
+#Ad.destroy_all
 
 ads = Ad.create([
-		{id: 1, title: "Hyuandai car", description: "Hyuandai car Grans i10", brand_id: 1},
-		{id: 2, title: "BMW car", description: "BMW car Ultra i10", brand_id: 2},
-		{id: 3, title: "Sumsumsung phone S6", description: "Sumsumsung phone S6", brand_id: 3},
-		{id: 4, title: "Nokia phone", description: "Nokia phone 2300", brand_id: 4}
+		{id: 1, title: "Hyuandai car", price: "2000", creator_id: "1", details: "", description: "Hyuandai car Grans i10", brand_id: 1, category_id: 3},
+		{id: 2, title: "BMW car", price: "2000", creator_id: "1", details: "", description: "BMW car Ultra i10", brand_id: 2, category_id: 3},
+		{id: 3, title: "Sumsumsung phone S6", price: "2000", creator_id: "1", details: "", description: "Sumsumsung phone S6", brand_id: 3, category_id: 3},
+		{id: 4, title: "Nokia phone", price: "2000", creator_id: "1", details: "", description: "Nokia phone 2300", brand_id: 4, category_id: 3}
 	]);
 
 
-AdCategory.destroy_all
+#AdCategory.destroy_all
 
 
 ad_categories = AdCategory.create([
@@ -72,3 +72,14 @@ ad_categories = AdCategory.create([
 		{ad_id: 3, category_id: 7},
 		{ad_id: 4, category_id: 7}
 	]);
+
+#Image.destroy_all
+images = Image.create([
+	{position: 1, ad_id: 1, image: File.new("#{Rails.root}/db/images/sample.jpg")},
+	{position: 1, ad_id: 2, image: File.new("#{Rails.root}/db/images/sample.jpg")},
+	{position: 1, ad_id: 3, image: File.new("#{Rails.root}/db/images/sample.jpg")},
+	{position: 1, ad_id: 4, image: File.new("#{Rails.root}/db/images/sample.jpg")}
+	]);
+
+
+

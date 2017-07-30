@@ -18,6 +18,11 @@
 //= require spa/authn/authn_session/authn_session.component
 //= require spa/authn/signup/signup.component
 
+//= require spa/home/home.module
+//= require spa/home/home.service
+//=	require spa/home/nav/nav.component
+//=	require spa/home/content/main_content.component
+
 //= require spa/layout/layout.module
 //= require spa/layout/navbar/navbar.component
 
@@ -38,9 +43,10 @@
 //=	require spa/AdPostForm/form/modal/sub-list/sub-category2/item/item.component
 //=	require spa/AdPostForm/form/dynamic-form/dynamic_form.component
 
-//= require spa/ads-loader/ad_list.module
-//=	require spa/ads-loader/latest_ads/latest_ads.component
-//= require spa/ads-loader/ads_loader.service
+
+
+
+
 
 
 

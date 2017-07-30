@@ -2,5 +2,5 @@
   "use strict";
 
   angular
-    .module("spa.adList", []);
+    .module("spa.home", []);
 })();

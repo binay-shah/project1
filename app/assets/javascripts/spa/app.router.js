@@ -11,11 +11,27 @@
 
   function RouterFunction($stateProvider, $urlRouterProvider, APP_CONFIG) {
     $stateProvider
-    .state("home",{
+    .state('public', {
+      abstract: true,
+      templateUrl: APP_CONFIG.main_page_html
+    })
+    .state("public.home",{
       url: "/",
-      templateUrl: APP_CONFIG.main_page_html,
-      // controller: ,
-      // controllerAs: ,
+      views: {        
+        nav: 'navComponent',
+        content: 'mainComponent'   
+
+      },
+      resolve: {
+        latestAds: ["spa.home.AdService", function(AdService){
+          return AdService.getLatestAds();
+        }], 
+        mainCategory: ["spa.home.AdService", function(AdService){
+          return  AdService.getAllCategories();
+        }]
+
+      }
+      
     })
     .state("accountSignup",{
       url: "/signup",      

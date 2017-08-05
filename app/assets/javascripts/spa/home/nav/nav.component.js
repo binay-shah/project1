@@ -15,9 +15,12 @@
     return APP_CONFIG.home_nav_html;
   } 
   
-  NavController.$inject = ["$scope"];
-  function NavController($scope) {
-    var $ctrl=this;      
+  NavController.$inject = ["$scope", "$element"];
+  function NavController($scope, $element) {
+    var $ctrl=this;  
+    $ctrl.collapseIt = collapseIt; 
+    $ctrl.collapseId;   
+    $ctrl.currIndex;
     
     $ctrl.$onInit = function() {
       console.log("NavController", $scope);     
@@ -26,6 +29,11 @@
 
     return;
     ////////////////////////////////  
+    function collapseIt(id){
+      console.log(id.currentTarget.getAttribute("data-id"));
+      $ctrl.collapseId = ($ctrl.collapseId == "bottom"+id.currentTarget.getAttribute("data-id"))?-1: "bottom"+id.currentTarget.getAttribute("data-id");
+      
+    }
 
   }
   

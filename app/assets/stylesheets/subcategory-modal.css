@@ -1,0 +1,46 @@
+.subcategory-modal{
+	position: relative;	
+	height: auto;
+	width: 100%; /* Full width */
+    height: 100%; 
+	overflow: auto;
+	border: 1px solid #888;
+	margin-top: 20px;
+	margin-bottom: 20px;
+
+
+}
+
+.subcategory-modal-content{
+	padding: 23px 26px;
+}
+
+
+.subcategory-modal::after{
+	content: " ";
+    position: absolute;
+    bottom: 90%; /* At the bottom of the tooltip */
+    left: -9%;
+    margin-left: 90px;
+    border-width: 15px;
+    border-style: solid;
+    border-color: transparent transparent black transparent;    
+}
+
+.subcategory-modal-header{
+	border-bottom: 1px solid #888;
+}
+
+.subcategory-item{
+	float: left;
+	margin: 30px;
+
+}
+
+
+
+#home-nav{
+	background: #eceaea;
+	padding-top: 10px;
+
+}

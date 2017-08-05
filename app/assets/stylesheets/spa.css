@@ -2,10 +2,12 @@
  * SPA Demo Stylesheet Manifest File
  * 
  *= require bootstrap
- *= require public
+ *= require public 
  *= require common
+ *= require subcategory-modal
  *= require signup
  *= require login
  *= require modal
  *= require ad-card
+ 
  */

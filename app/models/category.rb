@@ -4,8 +4,18 @@ class Category < ActiveRecord::Base
   
   has_many :brand_categories, inverse_of: :category, dependent: :destroy
   has_many :brands, through: :brand_categories
+  has_many :ads
 
-  scope :top_categories, -> { where(parent_id:nil)}
+  scope :categories, -> { where(parent_id:nil)}
 
-  #scope :all_subcategories, -> (category){top_categories.where(name: "#{category}").subcategories}
+  def self.get_hierarchy(id)
+  	category = Category.find(id)
+  	breadcrumbs = category.name 
+  	#get_hierarchy(category.parent_id)
+  	#breadcrumbs
+  	category[:name]
+  	
+  end
+
+  
 end

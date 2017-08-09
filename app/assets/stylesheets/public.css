@@ -62,6 +62,12 @@ body {
 #nav-list a span {
   font-size: 1.8em;
 }
+
+#home-nav{
+  background: #eceaea;
+  padding-top: 10px;
+
+}
 #adButton{
   margin-left: 10px;
 }

@@ -1,13 +1,31 @@
-<div class="row">
-	<h1><small>Latest Ads</small></h1>
-</div>
-<div class="row">
-	<div class="col-sm-4 " ng-repeat="item in $ctrl.latestAds">		
-			<div class="ad-card">
-				<img class="img-card" ng-src="{{item.images[0].url}}" />	
-				<div class="card-container">
-					{{item.title}}	
+<div class="container">
+	<div class="row">
+		<div class="col-sm-1"></div>
+		<div class="col-sm-8"><h1><small>Latest Ads</small></h1></div>
+		<div class="col-sm-1"></div>
+	</div>
+	<div class="row">
+		<div class="col-sm-1"></div>
+		<div class="col-sm-10">
+			<div class="row">
+				<div class="col-sm-4" ng-repeat="item in $ctrl.latestAds">		
+						<div class="ads_item">
+							<div class="ads_item_photos-holder">
+								<img class="ids_item_photos" ng-src="{{item.images[0].url}}" />
+							</div>								
+							<div class="ads_item_info">
+								<a class="ads_item_title">{{item.title}}</a>
+								<p class="ads_item_price price">{{item.price}}</p>
+								<p class="ad_item_breadcrumbs">{{item.breadcrumbs}}</p>	
+							</div>
+							<div class="ads_item_info_secondary">								
+								<p class="ads_item_date">{{item.created_at|date: 'dd MMMM'}}</p>
+								<p class="ads_item_location">{{item.location}}</p>	
+							</div>
+						</div>		
 				</div>
-			</div>		
+			</div>
+		</div>
+		<div class="col-sm-1"></div>
 	</div>
 </div>

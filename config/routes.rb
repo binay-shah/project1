@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   
 	defaults format: :json do 
-  resources :ad_categories, except: [:new, :edit]
   resources :ads, except: [:new, :edit]
   resources :brand_categories, except: [:new, :edit]
   resources :brands, except: [:new, :edit]

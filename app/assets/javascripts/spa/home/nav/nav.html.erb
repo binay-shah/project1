@@ -66,11 +66,12 @@
 				            </a>             
 			        	</div>
 				    </div>
+
 				    <div ng-if="$index % 4 == 0">
-					    <div class="subcategory-modal" data-id="bottom1" ng-if="$ctrl.collapseId == 'bottom'+$ctrl.mainCategory[$index+0].id">
+					    <div id="subcategory-modal1" class="subcategory-modal" data-id="bottom1" ng-if="$ctrl.collapseId == 'bottom'+$ctrl.mainCategory[$index+0].id">
 					    	<div class="subcategory-modal-content">
 								<div class="subcategory-modal-header" >
-			    					<a>View All Ads in </a>{{$ctrl.mainCategory[$index].name}}
+			    					<a>>View All Ads in </a>{{$ctrl.mainCategory[$index].name}}
 		  						</div>
 
 								<div   ng-repeat="item in $ctrl.mainCategory[$index+0].sub_category" class="col-sm-3">     
@@ -82,10 +83,10 @@
 								</div>
 							</div>       	
 					    </div>
-					    <div class="subcategory-modal" data-id="bottom1" ng-if="$ctrl.collapseId == 'bottom'+$ctrl.mainCategory[$index+1].id">
+					    <div id="subcategory-modal2" class="subcategory-modal" data-id="bottom1" ng-if="$ctrl.collapseId == 'bottom'+$ctrl.mainCategory[$index+1].id">
 					    	<div class="subcategory-modal-content">
 								<div class="subcategory-modal-header" >
-			    					<a>View All Ads in </a>{{$ctrl.mainCategory[$index+1].name}}
+			    					<a>>View All Ads in </a>{{$ctrl.mainCategory[$index+1].name}}
 		  						</div>
 
 								<div   ng-repeat="item in $ctrl.mainCategory[$index+1].sub_category" class="col-sm-3">     
@@ -97,10 +98,10 @@
 								</div>
 							</div>       	
 					    </div>
-					    <div class="subcategory-modal" data-id="bottom1" ng-if="$ctrl.collapseId == 'bottom'+$ctrl.mainCategory[$index+2].id">
+					    <div id ="subcategory-modal3" class="subcategory-modal" data-id="bottom1" ng-if="$ctrl.collapseId == 'bottom'+$ctrl.mainCategory[$index+2].id">
 					    	<div class="subcategory-modal-content">
 								<div class="subcategory-modal-header" >
-			    					<a>View All Ads in </a>{{$ctrl.mainCategory[$index+2].name}}
+			    					<a>>View All Ads in </a>{{$ctrl.mainCategory[$index+2].name}}
 		  						</div>
 
 								<div   ng-repeat="item in $ctrl.mainCategory[$index+1].sub_category" class="col-sm-3">     
@@ -112,16 +113,20 @@
 								</div>
 							</div>       	
 					    </div>
-					    <div class="row">
-					    	<div data-id="bottom1" ng-if="$ctrl.collapseId == 'bottom10'">
-						    	<div  ng-repeat="item in $ctrl.mainCategory[$index+3].sub_category" class="col-sm-3">        
-						            <a>
-						              <div class="nav-category-item">	                
-						                <span> > {{item.name}}</span>
-						              </div>
-						            </a>             
-					        	</div>
-					        </div>       	
+					    <div id ="subcategory-modal4" class="subcategory-modal" data-id="bottom1" ng-if="$ctrl.collapseId == 'bottom'+$ctrl.mainCategory[$index+3].id">
+					    	<div class="subcategory-modal-content">
+								<div class="subcategory-modal-header" >
+			    					<a>>View All Ads in </a>{{$ctrl.mainCategory[$index+3].name}}
+		  						</div>
+
+								<div   ng-repeat="item in $ctrl.mainCategory[$index+1].sub_category" class="col-sm-3">     
+							        <a>
+							          <div class="nav-category-item">	                
+							            <span> > {{item.name}}</span>
+							          </div>
+							        </a>             
+								</div>
+							</div>       	
 					    </div>
 					</div>    
 				</div>   
@@ -132,6 +137,8 @@
 		</div> 
 </div>	
 </div>
+
+
 
 
 

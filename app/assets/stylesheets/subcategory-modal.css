@@ -2,13 +2,12 @@
 	position: relative;	
 	height: auto;
 	width: 100%; /* Full width */
-    height: 100%; 
-	overflow: auto;
-	border: 1px solid #888;
-	margin-top: 20px;
+    height: 100%; 	
+	border: 1px solid #e6e2e2;
+	margin-top: 5px;
 	margin-bottom: 20px;
-
-
+	background-color: #fff;
+	
 }
 
 .subcategory-modal-content{
@@ -16,15 +15,63 @@
 }
 
 
-.subcategory-modal::after{
-	content: " ";
+.subcategory-modal::after, .subcategory-modal::before{
+	content: "";
     position: absolute;
-    bottom: 90%; /* At the bottom of the tooltip */
-    left: -9%;
-    margin-left: 90px;
+    bottom: 100%; /* At the bottom of the tooltip */
+    
     border-width: 15px;
     border-style: solid;
-    border-color: transparent transparent black transparent;    
+      
+}
+
+#subcategory-modal1::before {
+	left: 4%;
+    margin-left: -30px;
+    border-color: transparent transparent #e6e2e2 transparent; /*non transparent color same as #mybox's border-color*/
+}
+
+#subcategory-modal1::after{
+	margin-top: -2px;
+	left: 4%;
+    margin-left: -30px;
+    border-color: transparent transparent #fff transparent;  
+}
+
+#subcategory-modal2::before {
+	left: 30%;
+    margin-left: -30px;
+    border-color: transparent transparent #e6e2e2 transparent; /*non transparent color same as #mybox's border-color*/
+}
+
+#subcategory-modal2::after{
+	left: 30%;
+    margin-left: -30px;
+    border-color: transparent transparent #fff transparent;  
+}
+
+#subcategory-modal3::before {
+	left: 56%;
+    margin-left: -30px;
+    border-color: transparent transparent #e6e2e2 transparent; /*non transparent color same as #mybox's border-color*/
+}
+
+#subcategory-modal3::after{
+	left: 56%;
+    margin-left: -30px;
+    border-color: transparent transparent #fff transparent; 
+}
+
+#subcategory-modal4::before {
+	left: 82%;
+    margin-left: -30px;
+    border-color: transparent transparent #e6e2e2 transparent; /*non transparent color same as #mybox's border-color*/
+}
+
+#subcategory-modal4::after{
+	left: 82%;
+    margin-left: -30px;
+    border-color: transparent transparent #fff transparent; 
 }
 
 .subcategory-modal-header{
@@ -39,8 +86,7 @@
 
 
 
-#home-nav{
-	background: #eceaea;
-	padding-top: 10px;
 
-}
+
+
+

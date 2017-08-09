@@ -1,8 +1,8 @@
-.ad-card {
+.ads_item {
     /* Add shadows to create the "card" effect */
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
-    height: 250px;
+    height: auto;
     margin-bottom: 20px;
 }
 
@@ -12,10 +12,14 @@
 }
 
 /* Add some padding inside the card container */
-.card-container {
+.ads_item_info {
     padding: 2px 16px;
 }
 
-.img-card {
+.ads_item_info_secondary{
+
+}
+
+.ads_item_photos {
 	width: 100%;
 }

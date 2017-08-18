@@ -5,7 +5,7 @@ class CategoriesController < ApplicationController
   # GET /categories.json
   def index
     @category = nil
-    @categories = Category.top_categories
+    @categories = Category.categories
 
     #render json: @categories
   end

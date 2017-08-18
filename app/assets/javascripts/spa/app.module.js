@@ -8,6 +8,7 @@
       "spa.home",
       "spa.layout",
       "spa.authn",
-      "spa.adForm",      
+      "spa.adForm",
+      "spa.adItem"      
     ]);
 })();

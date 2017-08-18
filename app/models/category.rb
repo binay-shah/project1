@@ -8,14 +8,27 @@ class Category < ActiveRecord::Base
 
   scope :categories, -> { where(parent_id:nil)}
 
-  def self.get_hierarchy(id)
-  	category = Category.find(id)
-  	breadcrumbs = category.name 
-  	#get_hierarchy(category.parent_id)
-  	#breadcrumbs
-  	category[:name]
-  	
-  end
+  def self.get_categoryHierarchy(id, str)
+  	if(id.nil?)  		
+  		return "";
+  	else
+  	  	cat = Category.find(id)
+  	  	id= cat.parent_id
+  	  	str = get_categoryHierarchy(id, str) 
+  	  	str +=  cat.name + ">>"				
+  	end  		
+  end 
 
-  
+  def self.get_arr(id, arr=[])
+    if(id.nil?)     
+      return 
+    else
+        cat = Category.find(id)
+        id= cat.parent_id
+        get_arr(id, arr) 
+        arr << cat.name      
+    end
+    arr     
+  end 
+
 end

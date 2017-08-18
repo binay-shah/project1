@@ -31,7 +31,7 @@ categories = Category.create([
 	{id: 20, name: 'Jobs', parent_id: ''},
 	{id: 21, name: 'Business & Industrial', parent_id: ''},
 	{id: 22, name: 'Services', parent_id: ''}	
-	]);
+]);
 
 #Brand.destroy_all
 
@@ -53,33 +53,113 @@ brands_categories = BrandCategory.create([
 
 	]);
 
+
+cities = City.create([
+	{name:"Kathmandu"},
+	{name:"Pokhara"},
+	{name:"Lalitpur"},
+	{name:"Biratnagar"},
+	{name:"Birganj"},
+	{name:"Dharan"},
+	{name:"Bharatpur"},
+	{name:"Bhim"},
+	{name:"Butwal"},
+	{name:"Hetauda"},
+	{name:"Bhaktapur"},
+	{name:"Janakpur"},
+	{name:"Dhangadhi"},
+	{name:"Itahari"},
+	{name:"Triyuga"},
+	{name:"Siddharthanagar"},
+	{name:"Nepalganj"},
+	{name:"Madhyapur"},
+	{name:"Mechinagar"},
+	{name:"Ghorahi"},
+	{name:"Lekhnath"},
+	{name:"Kirtipur"},
+	{name:"Birendranagar"},
+	{name:"Gulariya"},
+	{name:"Tikapur"},
+	{name:"Ratnanagar"},
+	{name:"Tulsipur"},
+	{name:"kalaiya"},
+	{name:"Kamalamai"},
+	{name:"Gorkha"},
+	{name:"Damak"},
+	{name:"Rajbiraj"},
+	{name:"Kapilvastu"},
+	{name:"Byas"},
+	{name:"Lahan"},
+	{name:"Putalibazar"},
+	{name:"Panauti"},
+	{name:"Gaur"},
+	{name:"Dipayal-Silgadhi"},
+	{name:"Inaruwa"},
+	{name:"Siraha"},
+	{name:"Ramgram"},
+	{name:"Jaleswar"},
+	{name:"Baglung"},
+	{name:"Tansen"},
+	{name:"Khandbari"},
+	{name:"Bhimeshwar"},
+	{name:"Dhankuta"},
+	{name:"Bidur"},
+	{name:"Waling"},
+	{name:"Narayan"},
+	{name:"Malangwa"},
+	{name:"Bhadrapur"},
+	{name:"Amaragadhi"},
+	{name:"Dasharathchand"},
+	{name:"Ilam"},
+	{name:"Banepa"},
+	{name:"Dhulikhel"}
+]);
+
+
+locations = Location.create([
+	{lat: 1.0, lng:1.0, city_id: 1},
+	{lat: 1.0, lng:1.0, city_id: 1},
+	{lat: 1.0, lng:1.0, city_id: 1},
+	{lat: 1.0, lng:1.0, city_id: 1},
+	{lat: 1.0, lng:1.0, city_id: 1},
+	{lat: 1.0, lng:1.0, city_id: 1}
+	]);
+	
+
 #Ad.destroy_all
 
 ads = Ad.create([
-		{id: 1, title: "Hyuandai car", price: "2000", creator_id: "1", details: "", description: "Hyuandai car Grans i10", brand_id: 1, category_id: 3},
-		{id: 2, title: "BMW car", price: "2000", creator_id: "1", details: "", description: "BMW car Ultra i10", brand_id: 2, category_id: 3},
-		{id: 3, title: "Sumsumsung phone S6", price: "2000", creator_id: "1", details: "", description: "Sumsumsung phone S6", brand_id: 3, category_id: 3},
-		{id: 4, title: "Nokia phone", price: "2000", creator_id: "1", details: "", description: "Nokia phone 2300", brand_id: 4, category_id: 3}
+		{id: 1, title: "Hyuandai car", price: "2000", creator_id: "1", details: "", description: "Hyuandai car Grans i10", brand_id: 1, category_id: 3, :location_id=>1},
+		{id: 2, title: "BMW car", price: "2000", creator_id: "1", details: "", description: "BMW car Ultra i10", brand_id: 2, category_id: 3, :location_id=>2},
+		{id: 3, title: "Sumsumsung phone S6", price: "2000", creator_id: "1", details: "", description: "Sumsumsung phone S6", brand_id: 3, category_id: 3, :location_id=>3},
+		{id: 4, title: "Nokia phone", price: "2000", creator_id: "1", details: "", description: "Nokia phone 2300", brand_id: 4, category_id: 3, :location_id=>4},
+     	{id: 5, title: "Nokia phone", price: "2000", creator_id: "1", details: "", description: "Nokia phone 2300", brand_id: 4, category_id: 3, :location_id=>5},
+     	{id: 6, title: "Nokia phone", price: "2000", creator_id: "1", details: "", description: "Nokia phone 2300", brand_id: 4, category_id: 3, :location_id=>6}
 	]);
 
 
 #AdCategory.destroy_all
 
-
+=begin
 ad_categories = AdCategory.create([
 		{ad_id: 1, category_id: 2},
 		{ad_id: 2, category_id: 2},
 		{ad_id: 3, category_id: 7},
 		{ad_id: 4, category_id: 7}
 	]);
-
+=end
 #Image.destroy_all
 images = Image.create([
 	{position: 1, ad_id: 1, image: File.new("#{Rails.root}/db/images/sample.jpg")},
 	{position: 1, ad_id: 2, image: File.new("#{Rails.root}/db/images/sample.jpg")},
 	{position: 1, ad_id: 3, image: File.new("#{Rails.root}/db/images/sample.jpg")},
-	{position: 1, ad_id: 4, image: File.new("#{Rails.root}/db/images/sample.jpg")}
+	{position: 1, ad_id: 4, image: File.new("#{Rails.root}/db/images/sample.jpg")},
+	{position: 1, ad_id: 5, image: File.new("#{Rails.root}/db/images/sample.jpg")},
+	{position: 1, ad_id: 6, image: File.new("#{Rails.root}/db/images/sample.jpg")}
 	]);
+
+
+	
 
 
 

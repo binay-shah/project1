@@ -9,5 +9,7 @@
  *= require login
  *= require modal
  *= require ad-card
+ *= require ad_page
+ *= require breadcrumbs
  
  */

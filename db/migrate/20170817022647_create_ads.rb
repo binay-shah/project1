@@ -1,13 +1,14 @@
 class CreateAds < ActiveRecord::Migration
   def change
     create_table :ads do |t|
-      t.text :title
-      t.text :price
+      t.string :title
+      t.string :price
       t.integer :creator_id
-      t.text :details
-      t.text :description
+      t.string :details
+      t.string :description
       t.references :brand, index: true, foreign_key: true
       t.references :category, index: true, foreign_key: true
+      t.references :location, index: true, foreign_key: true
 
       t.timestamps null: false
     end

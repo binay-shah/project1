@@ -1,0 +1,12 @@
+#breadcrumbs {
+    padding: 0;
+    margin: 0;
+    height: 30px;
+    line-height:30px; /* line-height MUST be the same as height */
+    list-style-type:none;
+    
+}
+
+#breadcrumbs li {
+    float: left; /*ie6/7 needs this */
+}

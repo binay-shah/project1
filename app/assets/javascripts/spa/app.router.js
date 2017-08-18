@@ -19,7 +19,7 @@
       url: "/",
       views: {        
         nav: 'navComponent',
-        content: 'mainComponent'   
+        content: 'mainComponent' 
 
       },
       resolve: {
@@ -30,6 +30,20 @@
           return  AdService.getAllCategories();
         }]
 
+      }
+      
+    })
+        
+    .state('public.home.ad', {
+      url: "ad/{id}" ,
+      views: {        
+        'nav@public': 'adNavComponent',
+        'content@public': 'adContentComponent'  
+      } ,   
+      resolve: {
+        adItem: ['latestAds', '$transition$', '$filter' , function(latestAds, $transition$, $filter){
+          return $filter('filter')(latestAds, {'id': $transition$.params().id})[0];
+        }]
       }
       
     })

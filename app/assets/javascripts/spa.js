@@ -44,7 +44,9 @@
 //=	require spa/AdPostForm/form/dynamic-form/dynamic_form.component
 
 
-
+//= require spa/ad_item/ad_item.module
+//= require spa/ad_item/nav/ad_nav.component
+//= require spa/ad_item/content/ad_content.component
 
 
 

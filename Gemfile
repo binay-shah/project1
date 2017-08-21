@@ -16,6 +16,7 @@ gem 'uglifier', '~> 3.0', '>=3.0.2'
 gem 'coffee-rails', '~> 4.1', '>= 4.1.0'
 gem 'jquery-rails', '~>4.2', '>=4.2.1'
 
+
 group :development do
 	gem 'spring', '~>2.0', '>=2.0.0'
 	gem 'rspec-rails', '~> 3.5', '>=3.5.2'
@@ -40,6 +41,7 @@ source 'http://insecure.rails-assets.org' do
   gem 'rails-assets-angular-resource', '<= 1.5.9'
   gem 'rails-assets-ng-token-auth', '~>0.0', '>= 0.0.27'
   gem 'rails-assets-angular-cookie' #required by ng-token-auth
+  
 end
 
 

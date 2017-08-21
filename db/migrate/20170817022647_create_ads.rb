@@ -4,7 +4,7 @@ class CreateAds < ActiveRecord::Migration
       t.string :title
       t.string :price
       t.integer :creator_id
-      t.string :details
+      t.jsonb :details
       t.string :description
       t.references :brand, index: true, foreign_key: true
       t.references :category, index: true, foreign_key: true

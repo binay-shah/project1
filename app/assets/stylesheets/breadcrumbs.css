@@ -9,4 +9,17 @@
 
 #breadcrumbs li {
     float: left; /*ie6/7 needs this */
+    
+}
+
+#breadcrumbs #back_link{
+	margin-right: 25px;
+}
+
+#breadcrumbs .breadcrumb-item a{
+	padding-right: 10px;
+}
+
+#breadcrumbs .breadcrumb-item span{
+	padding-left: 10px;
 }

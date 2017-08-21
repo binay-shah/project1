@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 20170817023617) do
     t.string   "title"
     t.string   "price"
     t.integer  "creator_id"
-    t.string   "details"
+    t.jsonb    "details"
     t.string   "description"
     t.integer  "brand_id"
     t.integer  "category_id"

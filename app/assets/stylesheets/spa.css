@@ -1,6 +1,7 @@
 /*
  * SPA Demo Stylesheet Manifest File
  * 
+ *= require font-awesome
  *= require bootstrap
  *= require public 
  *= require common

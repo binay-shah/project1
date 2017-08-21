@@ -1,3 +1,7 @@
-json.extract! ad, :id, :title, :price, :description, :brand_id, :created_at, :updated_at
-json.url ad_url(ad, format: :json)
+json.extract! ad, :id, :title, :price,  :details, :description, :brand_id, :created_at, :category_id
 json.images ad.images, partial: 'images/image', as: :image
+json.breadcrumb Category.get_arr(ad.category_id)
+json.city ad.location.city.name
+#json.details ad.details  do |key|
+#	json.(key.Year)
+#end

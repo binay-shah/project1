@@ -151,7 +151,10 @@ ad_categories = AdCategory.create([
 =end
 #Image.destroy_all
 images = Image.create([
-	{position: 1, ad_id: 1, image: File.new("#{Rails.root}/db/images/sample.jpg")},
+	{position: 1, ad_id: 1, image: File.new("/Users/binay/Desktop/images/car1.jpg")},
+	{position: 2, ad_id: 1, image: File.new("/Users/binay/Desktop/images/car2.jpg")},
+	{position: 3, ad_id: 1, image: File.new("/Users/binay/Desktop/images/car3.jpeg")},
+	{position: 4, ad_id: 1, image: File.new("/Users/binay/Desktop/images/car4.jpeg")},
 	{position: 1, ad_id: 2, image: File.new("#{Rails.root}/db/images/sample.jpg")},
 	{position: 1, ad_id: 3, image: File.new("#{Rails.root}/db/images/sample.jpg")},
 	{position: 1, ad_id: 4, image: File.new("#{Rails.root}/db/images/sample.jpg")},

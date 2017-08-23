@@ -10,19 +10,11 @@
 	padding-top: 5px;
 }
 
-/*
-.action-bar{
-	position: relative;
-	margin-top: 10px;	
-	height: 80px;
-	background-color: #eee;
-}*/
 
 .action-bar {
     padding: 15px;
     background: #F8F8F8;
-    border: 1px solid #fff;
-    margin-top: 10px;	
+    border: 1px solid #fff;    	
     height: 80px;
 }
 
@@ -64,6 +56,52 @@
     border: 0;
     font-size: 50%;
     font: inherit;
+}
+
+.details{
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    column-count: 2;
+    
+    column-width: 50px;
+}
+.details li{
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    width: 80%;
+    
+}
+
+.details li .key{    
+    font-size: 14px;
+    color: #aaa;
+
+}
+
+.details li .value{
+    float: right;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.ad-description{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#back-btn{
+    margin-left: 5px;
+}
+
+.brtop{
+    border-bottom: 1px solid #aaa;
+    padding-top: 10px;
+}
+
+.pdingtop10{
+    padding-top: 10px;
 }
 
 

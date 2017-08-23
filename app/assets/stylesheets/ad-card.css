@@ -24,8 +24,9 @@
 	width: 100%;
 }
 
-.img_wrapper{
-	background-color: #eee; 	
+.img-wrapper{
+	background-color: #eee; 
+    margin-bottom: 10px;	
 	}
 
 .img_item{
@@ -34,4 +35,7 @@
     max-width: 100%
     height: auto;
 }
+
+
+
 

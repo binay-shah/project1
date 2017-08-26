@@ -1,0 +1,154 @@
+<div id="ad-nav">
+	<div  class="container">
+		<div  class="row">
+			<div class="col-sm-1"></div>
+
+			<div   class="col-sm-10">
+				<div id="content">
+					<ol id="breadcrumbs">
+						<li id="back_link">
+							<a ui-sref="public.home.child"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>Back</a>
+						</li>
+						<li class="breadcrumb-item">
+							<a>Ads {{$ctrl.adItem.city}}<span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a>
+						</li>
+						<li class="breadcrumb-item" ng-repeat="item in $ctrl.adItem.breadcrumb">
+							<a>{{item}} {{$ctrl.adItem.city}}<span ng-if="$ctrl.adItem.breadcrumb.length != $index+1" class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a>
+						</li>					
+					</ol>
+				</div>			
+			</div>
+		   <div class="col-sm-1"></div>
+		</div> 
+	</div>	
+</div>
+<div class="container">
+	<div class="row">
+		<div class="col-sm-1"></div>
+		<div class="col-sm-10">
+			<div class="row">
+				<div class="col-sm-9">
+					<div class="row">
+						<div class="col-sm-12">
+							<h1 class="h2">{{$ctrl.adItem.title}}</h1>
+							<p>{{$ctrl.adItem.city}}&nbsp &nbsp|&nbsp &nbsp Added at {{$ctrl.adItem.created_at | date: " h:mm MMM d, y "}}, Ad ID: &nbsp{{$ctrl.adItem.id}}</p>
+						</div>						
+					</div>
+
+					<div class="row">
+						<div class="col-sm-12">
+							<div class="img-wrapper">
+								<img class="img_item" ng-src="{{$ctrl.adItem.images[0].url_large}}" width="500">
+							</div>
+						</div>						
+					</div>
+
+					<div class="row">
+						<div class="col-sm-12">
+							<div class="action-bar">
+								<a href="#" class="pull-left action-bar-btn fav-btn">
+									<i class="fa fa-star-o fa-lg" aria-hidden="true"></i>
+									<span>Add to favourites</span>
+								</a>
+								<a href="#" class="pull-right action-bar-btn report-btn">
+									<i class="fa fa-exclamation-triangle fa-lg" aria-hidden="true"></i>
+									<span>Report</span>
+								</a>							
+							</div>
+						</div>
+					</div>
+
+					<div class="row">						
+						<div class="col-sm-12">
+							<ul class="details">
+							<li ng-repeat="(key, value) in $ctrl.adItem.details">
+								<span class="key">{{key}}</span>
+								<a class="value">{{value}}</a>
+							</li>
+							</ul>
+						</div>							
+					</div>
+					<div class="row">
+						<div class="col-sm-12">
+							<div class="ad-description">{{$ctrl.adItem.description}}</div>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-sm-12">
+							<div>
+								<div class="img-wrapper">
+									<div ng-repeat="image in $ctrl.adItem.images">
+										<img class="img_item" ng-show="image.position !=1" ng-src="{{image.url_large}}" width="500" >
+									</div>
+								</div>
+								<div><a ui-sref="public.home.child"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span><span id="back-btn">Back</span></a></div>
+								<div class="brtop"></div>
+								<div class="pdingtop10"><small>Views: <strong>{{$ctrl.adItem.views}}</strong></small> </div>
+							</div>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-sm-12">
+							<div class="margintop30">
+								<h4 cl>Contact Seller</h4>
+								<div class="panel panel-default">
+								<div class="panel-body">
+									<div class="row">
+										<div class="col-sm-10">
+											<div class="pdingbottom10">	
+												<a><span class="glyphicon glyphicon-earphone circle-phone" aria-hidden="true"></span></a>	
+											</div>							
+											<form>
+												<div class="form-group row">
+													<div class="col-sm-6">									    
+												    	<input type="text" class="form-control" id="formGroupExampleInput" placeholder=" Your email...">
+												    </div>
+												 </div>
+												<div class="form-group">									    
+												    <textarea  class="form-control" id="formGroupExampleInput2" placeholder="Message content..." rows="6"></textarea>
+												</div>	
+											</form>
+										</div>
+										<div class="col-sm-2"></div>
+									</div>
+									<div>
+										<div class="col-sm-10">
+											<span class="tdone lheight28 cpointer"><i class="fa fa-paperclip" aria-hidden="true"></i>&nbsp<span class="link">Add attachment</span></span>
+											<div>
+												<p class="x-small color-1 lheight14 attachmentinfo marginleft14">
+													Acceptable types of files: jpg, jpeg, png, doc, pdf, gif, 
+													zip, rar, tar, html, swf, txt, xls, docx, xlsx, odt
+													Maximum file size is 2 MB
+												</p>
+											</div>
+										</div>
+										<div class="col-sm-2">
+											<button type="button" class="btn btn-primary"><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp&nbspSend</button>
+										</div>
+									</div>									
+								</div>
+							</div>							
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-sm-12">
+						<div>
+							<span class="pull-left">User Ads</span><span class="pull-right">Ads of this User</span>
+						</div>
+						<div>
+							
+						</div>
+					</div>					
+				</div>
+
+				</div>	
+				<div class="col-sm-3">Hello</div>	
+			</div>		
+		</div>
+		<div class="col-sm-1"></div>
+	</div>	
+</div>	

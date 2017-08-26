@@ -22,11 +22,12 @@ ActiveRecord::Schema.define(version: 20170817023617) do
     t.integer  "creator_id"
     t.jsonb    "details"
     t.string   "description"
+    t.integer  "views",       default: 0
     t.integer  "brand_id"
     t.integer  "category_id"
     t.integer  "location_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
   end
 
   add_index "ads", ["brand_id"], name: "index_ads_on_brand_id", using: :btree

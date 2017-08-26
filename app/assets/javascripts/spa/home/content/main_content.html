@@ -8,13 +8,13 @@
 		<div class="col-sm-1"></div>
 		<div class="col-sm-10">
 			<div class="row">
-				<div  ui-sref="public.home.ad({id: item.id})" class="col-sm-4" ng-repeat="item in $ctrl.latestAds">		
+				<div  ui-sref="public.ad({id: item.id})" class="col-sm-4" ng-repeat="item in $ctrl.latestAds">		
 						<div class="ads_item">
 							<div class="ads_item_photos-holder">
 								<img class="ads_item_photos" ng-src="{{item.images[0].url_medium}}" />
 							</div>								
 							<div class="ads_item_info">
-								<a ui-sref="public.home.ad({id: item.id})" class="ads_item_title">{{item.title}}</a>
+								<a ui-sref="public.ad({id: item.id})" class="ads_item_title">{{item.title}}</a>
 								<p class="ads_item_price price">{{item.price}}</p>
 								<p class="ad_item_breadcrumbs">{{item.breadcrumbs}}</p>	
 							</div>
@@ -29,3 +29,9 @@
 		<div class="col-sm-1"></div>
 	</div>
 </div>
+
+
+
+
+
+

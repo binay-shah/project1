@@ -15,12 +15,14 @@
       abstract: true,
       templateUrl: APP_CONFIG.main_page_html
     })
-    .state("public.home",{
+    .state("public.home", {        
+      templateUrl: APP_CONFIG.home_page_html
+    })
+    .state("public.home.child",{
       url: "/",
       views: {        
         nav: 'navComponent',
         content: 'mainComponent' 
-
       },
       resolve: {
         latestAds: ["spa.home.AdService", function(AdService){
@@ -29,23 +31,16 @@
         mainCategory: ["spa.home.AdService", function(AdService){
           return  AdService.getAllCategories();
         }]
-
-      }
-      
-    })
-        
-    .state('public.home.ad', {
-      url: "ad/{id}" ,
-      views: {        
-        'nav@public': 'adNavComponent',
-        'content@public': 'adContentComponent'  
-      } ,   
+      }      
+    })        
+    .state('public.ad', {
+      url: "/ad/{id}" ,
+      component: 'adItemComponent',   
       resolve: {
-        adItem: ['latestAds', '$transition$', '$filter' , function(latestAds, $transition$, $filter){
-          return $filter('filter')(latestAds, {'id': $transition$.params().id})[0];
+        adItem: ["spa.home.AdService", '$transition$', function(AdService, $transition$){          
+          return AdService.getAdItem($transition$.params().id);
         }]
-      }
-      
+      }      
     })
     .state("accountSignup",{
       url: "/signup",      
@@ -93,7 +88,7 @@
       component: 'modalMainlist',    
       
       resolve: {
-            categories:["spa.adForm.AdService",   function(AdService){              
+            categories:["spa.adForm.AdService", function(AdService){              
               return AdService.getCategoriesFromServer();
             }]
           }       

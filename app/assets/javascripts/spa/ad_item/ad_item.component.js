@@ -3,9 +3,9 @@
 
   angular
     .module("spa.adItem")
-    .component("adContentComponent", {
+    .component("adItemComponent", {
       templateUrl: templateUrl,
-      controller: AdContentController,
+      controller: AdItemController,
       bindings: {'adItem': '<'}
       
     })
@@ -19,19 +19,16 @@
 
   templateUrl.$inject = ["spa.config.APP_CONFIG"];
   function templateUrl(APP_CONFIG) {
-    return APP_CONFIG.ad_content_html;
+    return APP_CONFIG.ad_item_html;
   } 
   
-  AdContentController.$inject = ["$scope", "$element", "numKeysFilter"];
-  function AdContentController($scope, $element, numKeysFilter) {
+  AdItemController.$inject = ["$scope", "$element", "numKeysFilter"];
+  function AdItemController($scope, $element, numKeysFilter) {
     var $ctrl = this;
     $ctrl.range=range;
     
     $ctrl.$onInit = function() {
-      console.log("AdContentController", $scope);   
-      console.log($ctrl.adItem);     
-      console.log(JSON.parse($ctrl.adItem.details));
-       
+      console.log("AdItemController", $scope);       
     }    
 
     return;

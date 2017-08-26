@@ -104,5 +104,64 @@
     padding-top: 10px;
 }
 
+.margintop30{
+    padding-top: 30px;
+}
+.circle-phone{
+    
+    background: #337ab7;
+    padding: 8px;
+    border-radius: 100%;
+    color: white;
+
+}
+.pdingbottom10{
+    padding-bottom: 12px;
+}
+
+.attachmentinfo, form.answer .attachmentinfo {
+    width: 240px;
+}
+
+.color-1 {
+    color: #a0a0a0;
+}
+
+.lheight14 {
+    line-height: 14px;
+}
+
+.marginleft14 {
+    margin-left: 14px !important;
+}
+
+.x-small {
+    font-size: 10px;
+}
+
+p {
+    margin: 0 0 .2em;
+}
+
+.lheight28 {
+    line-height: 28px;
+}
+
+.tdnone {
+    text-decoration: none !important;
+}
+
+.cpointer {
+    cursor: pointer;
+}
+
+.link {
+    color: #097ab3;
+    vertical-align: middle;
+}
+
+.link, .link:visited {
+    text-decoration: underline;
+}
 
 

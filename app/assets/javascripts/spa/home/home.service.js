@@ -25,7 +25,15 @@
 
       service.getMainCategory = function(item){
         return item.name;
-      } 	  
+      }
+
+      service.getAdItem = function(id){
+        return $http.get(APP_CONFIG.ApiPath + '/ads/'+id).then(function (response) {  
+          service.adItem = response.data           
+          return service.adItem;
+        });
+      }  
+
     }
 
 

@@ -6,6 +6,7 @@ class CreateAds < ActiveRecord::Migration
       t.integer :creator_id
       t.jsonb :details
       t.string :description
+      t.integer :views, default: 0
       t.references :brand, index: true, foreign_key: true
       t.references :category, index: true, foreign_key: true
       t.references :location, index: true, foreign_key: true

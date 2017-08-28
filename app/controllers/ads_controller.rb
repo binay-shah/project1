@@ -1,44 +1,37 @@
 class AdsController < ApplicationController
   before_action :set_ad, only: [:show, :update, :destroy]
+  wrap_parameters :ad, include: ["title", "price", "details", "description", "brand_id", "category_id", "location_id"]
+  before_action :authenticate_user!, only: [:create, :update, :destroy]
 
-  # GET /ads
-  # GET /ads.json
+  
   def index
-    @ads = Ad.all
-
-    #render json: @ads
+    @ads = Ad.all    
   end
-
-  # GET /ads/1
-  # GET /ads/1.json
+  
   def show
     @ad.increment!(:views)
   end
-
-  # POST /ads
-  # POST /ads.json
+  
   def create
     @ad = Ad.new(ad_params)
-
+    @ad.user_id = current_user.id
     if @ad.save
-      render json: @ad, status: :created, location: @ad
+      render show: @ad, status: :created, location: @ad
     else
-      render json: @ad.errors, status: :unprocessable_entity
+      render json: {errors:@ad.errors.messages}, status: :unprocessable_entity
     end
   end
 
-  # PATCH/PUT /ads/1
-  # PATCH/PUT /ads/1.json
+  
   def update
     if @ad.update(ad_params)
       head :no_content
     else
-      render json: @ad.errors, status: :unprocessable_entity
+      render json: {errors:@ad.errors.messages}, status: :unprocessable_entity
     end
   end
 
-  # DELETE /ads/1
-  # DELETE /ads/1.json
+  
   def destroy
     @ad.destroy
 
@@ -52,6 +45,6 @@ class AdsController < ApplicationController
     end
 
     def ad_params
-      params.require(:ad).permit(:title, :price, :creator_id, :details, :description, :brand_id, :category_id, :location_id)
+      params.require(:ad).permit(:title, :price, :details, :description, :brand_id, :category_id, :location_id)
     end
 end

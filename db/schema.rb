@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20170817023617) do
   create_table "ads", force: :cascade do |t|
     t.string   "title"
     t.string   "price"
-    t.integer  "creator_id"
+    t.integer  "user_id"
     t.jsonb    "details"
     t.string   "description"
     t.integer  "views",       default: 0
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 20170817023617) do
   add_index "ads", ["brand_id"], name: "index_ads_on_brand_id", using: :btree
   add_index "ads", ["category_id"], name: "index_ads_on_category_id", using: :btree
   add_index "ads", ["location_id"], name: "index_ads_on_location_id", using: :btree
+  add_index "ads", ["user_id"], name: "index_ads_on_user_id", using: :btree
 
   create_table "brand_categories", force: :cascade do |t|
     t.integer  "category_id"
@@ -123,6 +124,7 @@ ActiveRecord::Schema.define(version: 20170817023617) do
   add_foreign_key "ads", "brands"
   add_foreign_key "ads", "categories"
   add_foreign_key "ads", "locations"
+  add_foreign_key "ads", "users"
   add_foreign_key "brand_categories", "brands"
   add_foreign_key "brand_categories", "categories"
   add_foreign_key "images", "ads"

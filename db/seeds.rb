@@ -129,13 +129,13 @@ locations = Location.create([
 #Ad.destroy_all
 
 ads = Ad.create([
-		{id: 1, title: "Hyuandai car", price: "2000", creator_id: "1", details: '{"Model": "Regata", "Transmission Type": "Manual", "Year": "2009", "Kilometers": "120000 to 129999"}', description: "Hyuandai car Grans i10", brand_id: 1, category_id: 2, :location_id=>1},
-		{id: 2, title: "BMW car", price: "2000", creator_id: "1", details: "", description: "BMW car Ultra i10", brand_id: 2, category_id: 2, :location_id=>2},
-		{id: 3, title: "Sumsumsung phone S6", price: "2000", creator_id: "1", details: "", description: "Sumsumsung phone S6", brand_id: 3, category_id: 3, :location_id=>3},
-		{id: 4, title: "Nokia phone", price: "2000", creator_id: "1", details: "", description: "Nokia phone 2300", brand_id: 4, category_id: 3, :location_id=>4},
-     	{id: 5, title: "Nokia phone", price: "2000", creator_id: "1", details: "", description: "Nokia phone 2300", brand_id: 4, category_id: 3, :location_id=>5},
-     	{id: 6, title: "Nokia phone", price: "2000", creator_id: "1", details: "", description: "Nokia phone 2300", brand_id: 4, category_id: 3, :location_id=>6},
-     	{id: 7, title: "House", price: "2000", creator_id: "1", details: "", description: "good House", brand_id: "", category_id: 13, :location_id=>6}
+		{id: 1, title: "Hyuandai car", price: "2000", user_id: "1", details: '{"Model": "Regata", "Transmission Type": "Manual", "Year": "2009", "Kilometers": "120000 to 129999"}', description: "Hyuandai car Grans i10", brand_id: 1, category_id: 2, :location_id=>1},
+		{id: 2, title: "BMW car", price: "2000", user_id: "1", details: "", description: "BMW car Ultra i10", brand_id: 2, category_id: 2, :location_id=>2},
+		{id: 3, title: "Sumsumsung phone S6", price: "2000", user_id: "1", details: "", description: "Sumsumsung phone S6", brand_id: 3, category_id: 3, :location_id=>3},
+		{id: 4, title: "Nokia phone", price: "2000", user_id: "1", details: "", description: "Nokia phone 2300", brand_id: 4, category_id: 3, :location_id=>4},
+     	{id: 5, title: "Nokia phone", price: "2000", user_id: "2", details: "", description: "Nokia phone 2300", brand_id: 4, category_id: 3, :location_id=>5},
+     	{id: 6, title: "Nokia phone", price: "2000", user_id: "2", details: "", description: "Nokia phone 2300", brand_id: 4, category_id: 3, :location_id=>6},
+     	{id: 7, title: "House", price: "2000", user_id: "2", details: "", description: "good House", brand_id: "", category_id: 13, :location_id=>6}
 	]);
 
 

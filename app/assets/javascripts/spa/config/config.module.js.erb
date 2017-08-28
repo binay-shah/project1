@@ -5,7 +5,7 @@
     .module("spa.config", [])
     .constant("spa.config.APP_CONFIG", {
       server_url: "<%= ENV['RAILS_API_URL'] %>",
-      ApiPath:  'http://localhost:3000', 
+      ApiPath:  'http://localhost:3000/api', 
 
       main_page_html: "<%= asset_path('spa/pages/main.html') %>",
       signup_page_html: "<%= asset_path('spa/pages/signup_page.html') %>",      

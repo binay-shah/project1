@@ -137,10 +137,28 @@
 				<div class="row">
 					<div class="col-sm-12">
 						<div>
-							<span class="pull-left">User Ads</span><span class="pull-right">Ads of this User</span>
+							<a><span class="pull-left">User Ads</span></a><a><span class="pull-right">Ads of this User</span></a>
+							<div>
+								<table class="table">
+									<tbody>
+										<tr ng-repeat="item in $ctrl.adItem.user_details.ads">
+											<td>
+												<table>
+													<tbody>
+														<tr>
+															<td></td>
+															<td>{{item.title}}</td>
+															<td>{{item.price}}</td>
+														</tr>
+													</tbody>
+												</table>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
 						</div>
-						<div>
-							
+						<div>							
 						</div>
 					</div>					
 				</div>

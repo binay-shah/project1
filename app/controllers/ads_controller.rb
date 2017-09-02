@@ -16,7 +16,10 @@ class AdsController < ApplicationController
     @ad = Ad.new(ad_params)
     @ad.user_id = current_user.id
     if @ad.save
-      render show: @ad, status: :created, location: @ad
+      if params[:images]
+        params[:images].each { |img| @ad.images.create(:image => File.new(img[:image]), :position=> img[:position])}      
+      end
+      render json: @ad, status: :created, location: @ad
     else
       render json: {errors:@ad.errors.messages}, status: :unprocessable_entity
     end
@@ -45,6 +48,8 @@ class AdsController < ApplicationController
     end
 
     def ad_params
-      params.require(:ad).permit(:title, :price, :details, :description, :brand_id, :category_id, :location_id)
+      params.require(:ad).permit(:title, :price, :details, :description, :brand_id, :category_id, :location_id, :images => [:image, :position])
     end
+
+    
 end

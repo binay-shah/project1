@@ -17,17 +17,18 @@ ActiveRecord::Schema.define(version: 20170817023617) do
   enable_extension "plpgsql"
 
   create_table "ads", force: :cascade do |t|
-    t.string   "title"
-    t.string   "price"
+    t.string   "title",       default: ""
+    t.decimal  "price",       default: 0.0
+    t.boolean  "negoitable",  default: false
     t.integer  "user_id"
     t.jsonb    "details"
-    t.string   "description"
+    t.text     "description", default: ""
     t.integer  "views",       default: 0
     t.integer  "brand_id"
     t.integer  "category_id"
     t.integer  "location_id"
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
   end
 
   add_index "ads", ["brand_id"], name: "index_ads_on_brand_id", using: :btree

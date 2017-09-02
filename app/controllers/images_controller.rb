@@ -1,57 +1,41 @@
 class ImagesController < ApplicationController
-  before_action :set_image, only: [:show, :update, :destroy]
+  before_action :set_ad, only: [:index, :show, :create, :destroy]  
 
-  # GET /images
-  # GET /images.json
   def index
-    @images = Image.all
-
-    #render json: @images
+    if !params[:position].nil?
+      @images = @ad.images.filter_by_position(params[:position])    
+    else
+     @images = @ad.images     
+    end    
   end
 
-  # GET /images/1
-  # GET /images/1.json
-  def show
-    #render json: @image
+  def show    
+     @image = @ad.images.find(params[:id]) 
   end
-
-  # POST /images
-  # POST /images.json
+  
   def create
-    @image = Image.new(image_params)
-
+    @image = @ad.images.new(image_params)
     if @image.save
-      render json: @image, status: :created, location: @image
+      render show: @image, status: :created, location: @image
     else
-      render json: @image.errors, status: :unprocessable_entity
+      render json: {errors:@image.errors.messages}, status: :unprocessable_entity
     end
-  end
+  end  
 
-  # PATCH/PUT /images/1
-  # PATCH/PUT /images/1.json
-  def update
-    if @image.update(image_params)
-      head :no_content
-    else
-      render json: @image.errors, status: :unprocessable_entity
-    end
-  end
-
-  # DELETE /images/1
-  # DELETE /images/1.json
+  
   def destroy
+    @image = @ad.images.find(params[:id])
     @image.destroy
-
     head :no_content
   end
 
   private
 
-    def set_image
-      @image = Image.find(params[:id])
+    def set_ad
+      @ad = Ad.find(params[:ad_id])
     end
 
     def image_params
-      params.require(:image).permit(:position, :ad_id)
+      params.require(:image).permit(:position)
     end
 end

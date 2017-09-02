@@ -1,15 +1,14 @@
 Rails.application.routes.draw do
   
   
-  
-  
 
 	scope :api, defaults: {format: :json} do 
     resources :brand_categories, except: [:new, :edit]
     resources :brands, except: [:new, :edit]
-    resources :categories, except: [:new, :edit]
-    resources :images, except: [:new, :edit]
-    resources :ads, except: [:new, :edit]
+    resources :categories, except: [:new, :edit]    
+    resources :ads, except: [:new, :edit] do
+      resources :images, except: [:new, :edit]
+    end
     resources :cities, except: [:new, :edit]
     resources :locations, except: [:new, :edit]
     resources :users, except: [:new, :edit]

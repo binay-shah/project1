@@ -27,7 +27,7 @@
 .img-wrapper{
 	background-color: #eee; 
     margin-bottom: 10px;	
-	}
+}
 
 .img_item{
 	display: block;
@@ -35,7 +35,6 @@
     max-width: 100%
     height: auto;
 }
-
 
 
 

@@ -164,4 +164,76 @@ p {
     text-decoration: underline;
 }
 
+.thumb.scale4 {
+    display: block;
+    height: 80px;
+    line-height: 80px;
+    width: 102px;
+    text-align: center;
+    background: #f7f7f7;
+    overflow: hidden;
+}
 
+.thumb.scale4 img {
+    vertical-align: middle;
+    max-width: 102px;
+    max-height: 80px;
+    float: none;
+}
+.borderless td, .borderless th, .borderless tr{
+    border: none !important;
+}
+
+#ad-info{
+    margin-left: -50px ;
+}
+
+.lheight14 {
+    line-height: 14px;
+}
+.table{
+    margin-bottom: -5px;
+}
+
+
+#pricelabel {
+  background: #eee;
+  display: inline-block;
+  height: 64px;
+  line-height: 64px;
+  margin-top: 15px;
+  position: relative;
+  width: 100%;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 25px;
+}
+
+#pricelabel:before {
+  
+  border-right: 35px solid #eee;
+  border-top: 32px solid transparent;
+  border-bottom: 32px solid transparent;
+  content: "";
+  height: 0px;
+  right: 0;
+  position: absolute;
+  left: -35px;
+  width: 0;
+  
+}
+
+#phone{
+    background: blue;
+    height: 50px;
+    width: 100%;
+    margin-top: 10px;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 25px;
+}
+
+#contactbox{
+    margin-top: 10px;
+    width: 100%;
+}

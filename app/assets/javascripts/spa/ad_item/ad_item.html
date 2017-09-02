@@ -143,12 +143,19 @@
 									<tbody>
 										<tr ng-repeat="item in $ctrl.adItem.user_details.ads">
 											<td>
-												<table>
+												<table class="table borderless">
 													<tbody>
 														<tr>
-															<td></td>
-															<td>{{item.title}}</td>
-															<td>{{item.price}}</td>
+															<td class="col-sm-3"><a class="thumb scale4">
+																	<img ng-src="{{item.small_image}}"></a></td>
+															<td class="col-sm-6">
+																<div id="ad-info">
+																	<h5><a><strong>{{item.title}}</strong></a></h5>
+																	<p class="lheight14"><small>{{item.category}}</small></p>
+																	<p class="lheight14"><small>{{item.created_at | date: "d  MMM "}}</small></p>
+																</div>
+															</td>
+															<td class="col-sm-3 pull-right">{{item.price}}</td>
 														</tr>
 													</tbody>
 												</table>
@@ -164,7 +171,18 @@
 				</div>
 
 				</div>	
-				<div class="col-sm-3">Hello</div>	
+				<div class="col-sm-3">
+					<div id="pricelabel">
+						<i class="fa fa-inr fa-lg" aria-hidden="true"></i> &nbsp{{$ctrl.adItem.price }}
+					</div>
+					<div id="contactbox">
+						<a  class="btn btn-primary"> 
+						<span><i class="fa fa-envelope fa-lg" aria-hidden="true"></i>
+						<span>Send Message</span>
+						</a>
+						<a></a>
+					</div>
+				</div>	
 			</div>		
 		</div>
 		<div class="col-sm-1"></div>

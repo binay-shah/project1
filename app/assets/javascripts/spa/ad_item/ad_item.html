@@ -172,19 +172,37 @@
 
 				</div>	
 				<div class="col-sm-3">
-					<div id="pricelabel">
-						<i class="fa fa-inr fa-lg" aria-hidden="true"></i> &nbsp{{$ctrl.adItem.price }}
-					</div>
-					<div id="contactbox">
-						<a  class="btn btn-primary"> 
-						<span><i class="fa fa-envelope fa-lg" aria-hidden="true"></i>
-						<span>Send Message</span>
+					<div class="pdingbottom20">
+						<div id="pricelabel">
+							<i class="fa fa-inr fa-lg" aria-hidden="true"></i> &nbsp{{$ctrl.adItem.price }}
+						</div>
+						<div id="contactbox">
+							<a  class="btn btn-primary btn-block btn-lg"> 
+							<span><i class="fa fa-envelope fa-lg" aria-hidden="true"></i>&nbsp&nbsp
+							<span>Send Message</span>
+							</a>
+							<button class="btn btn-primary btn-block btn-lg"><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>&nbsp&nbsp&nbsp&nbsp&nbsp<span>9842055102</span></button>
+						</div>
+						<a ng-click= "$ctrl.openMapModal()" class="locationbox block margintop10 tdone cpointer">
+							<span class="block clr">
+								<span class="glyphicon glyphicon-map-marker fa-2x pull-left  margintop5 marginleft5" aria-hidden="true"></span>
+								<span class="block marginleft50 margintop5">
+									<span class="block normal">{{$ctrl.adItem.city}}</span>
+									<span class="link lheight22 cpointer">
+										<span>Show on map</span>
+									</span>
+								</span>
+							</span>
 						</a>
-						<a></a>
-					</div>
+						
+					</span>
 				</div>	
 			</div>		
 		</div>
 		<div class="col-sm-1"></div>
 	</div>	
 </div>	
+
+<map-modal show='$ctrl.mapModalShown' width='750px' height='60%'>
+  							<ng-map center="[40.74, -74.18]"></ng-map>
+						</map-modal>

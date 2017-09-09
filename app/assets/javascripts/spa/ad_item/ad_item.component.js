@@ -26,18 +26,26 @@
   function AdItemController($scope, $element, numKeysFilter) {
     var $ctrl = this;
     $ctrl.range=range;
+    $ctrl.mapModalShown =false;
+    $ctrl.openMapModal = openMapModal;
     
     $ctrl.$onInit = function() {
       console.log("AdItemController", $scope);       
     }    
 
     return;
+    //////////////////////////////// 
 
      function range(num){
       num = num/2;
       return new Array(num);
     }
-    ////////////////////////////////  
+
+    function openMapModal(){
+     $ctrl.mapModalShown = !$ctrl.mapModalShown;
+    }
+
+    
   }
   
 })();

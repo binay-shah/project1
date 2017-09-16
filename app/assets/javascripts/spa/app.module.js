@@ -9,6 +9,7 @@
       "spa.layout",
       "spa.authn",
       "spa.adForm",
-      "spa.adItem"      
+      "spa.adItem",
+      "spa.geoloc"      
     ]);
 })();

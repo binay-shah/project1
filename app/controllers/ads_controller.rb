@@ -1,7 +1,7 @@
 class AdsController < ApplicationController
   before_action :set_ad, only: [:show, :update, :destroy]
-  wrap_parameters :ad, include: ["title", "price", "details", "description", "brand_id", "category_id", "location_id"]
-  before_action :authenticate_user!, only: [:create, :update, :destroy]
+  wrap_parameters :ad, include: ["title", "price", "details", "description", "brand_id", "category_id", "city_id", "address"]
+  #before_action :authenticate_user!, only: [:create, :update, :destroy]
 
   
   def index
@@ -14,7 +14,7 @@ class AdsController < ApplicationController
   
   def create
     @ad = Ad.new(ad_params)
-    @ad.user_id = current_user.id
+    #@ad.user_id = current_user.id
     if @ad.save
       if params[:images]
         params[:images].each { |img| @ad.images.create(:image => File.new(img[:image]), :position=> img[:position])}      
@@ -48,8 +48,7 @@ class AdsController < ApplicationController
     end
 
     def ad_params
-      params.require(:ad).permit(:title, :price, :details, :description, :brand_id, :category_id, :location_id, :images => [:image, :position])
+      params.require(:ad).permit(:title, :price, :details, :description, :brand_id, :category_id, :city_id, :address, :images => [:image, :position])
     end
-
     
 end

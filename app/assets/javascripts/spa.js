@@ -47,6 +47,11 @@
 //= require spa/ad_item/ad_item.module
 //= require spa/ad_item/ad_item.component
 //= require spa/ad_item/map_modal.directive
+//= require spa/ad_item/map_modal.component
+
+
+//= require spa/geoloc/geoloc.module
+//= require spa/geoloc/map.service
 
 
 

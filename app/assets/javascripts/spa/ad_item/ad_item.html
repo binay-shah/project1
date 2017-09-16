@@ -203,6 +203,7 @@
 	</div>	
 </div>	
 
-<map-modal show='$ctrl.mapModalShown' width='750px' height='60%'>
-  							<ng-map center="[40.74, -74.18]"></ng-map>
-						</map-modal>
+<map-modal-component show='$ctrl.mapModalShown'>
+	<div id="map"></div> 
+</map-modal-component>
+

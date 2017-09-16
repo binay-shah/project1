@@ -19,21 +19,24 @@ ActiveRecord::Schema.define(version: 20170817023617) do
   create_table "ads", force: :cascade do |t|
     t.string   "title",       default: ""
     t.decimal  "price",       default: 0.0
+    t.decimal  "lat"
+    t.decimal  "lng"
     t.boolean  "negoitable",  default: false
     t.integer  "user_id"
     t.jsonb    "details"
     t.text     "description", default: ""
+    t.text     "address",     default: ""
     t.integer  "views",       default: 0
     t.integer  "brand_id"
     t.integer  "category_id"
-    t.integer  "location_id"
+    t.integer  "city_id"
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
   end
 
   add_index "ads", ["brand_id"], name: "index_ads_on_brand_id", using: :btree
   add_index "ads", ["category_id"], name: "index_ads_on_category_id", using: :btree
-  add_index "ads", ["location_id"], name: "index_ads_on_location_id", using: :btree
+  add_index "ads", ["city_id"], name: "index_ads_on_city_id", using: :btree
   add_index "ads", ["user_id"], name: "index_ads_on_user_id", using: :btree
 
   create_table "brand_categories", force: :cascade do |t|
@@ -80,16 +83,6 @@ ActiveRecord::Schema.define(version: 20170817023617) do
 
   add_index "images", ["ad_id"], name: "index_images_on_ad_id", using: :btree
 
-  create_table "locations", force: :cascade do |t|
-    t.float    "lat"
-    t.float    "lng"
-    t.integer  "city_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "locations", ["city_id"], name: "index_locations_on_city_id", using: :btree
-
   create_table "users", force: :cascade do |t|
     t.string   "provider",               default: "email", null: false
     t.string   "uid",                    default: "",      null: false
@@ -124,10 +117,9 @@ ActiveRecord::Schema.define(version: 20170817023617) do
 
   add_foreign_key "ads", "brands"
   add_foreign_key "ads", "categories"
-  add_foreign_key "ads", "locations"
+  add_foreign_key "ads", "cities"
   add_foreign_key "ads", "users"
   add_foreign_key "brand_categories", "brands"
   add_foreign_key "brand_categories", "categories"
   add_foreign_key "images", "ads"
-  add_foreign_key "locations", "cities"
 end

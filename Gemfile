@@ -9,7 +9,7 @@ gem 'devise_token_auth', '~>0.1', '>=0.1.39'
 gem 'exifr', '~> 1.2', '>= 1.2.5'
 gem 'mini_magick', '~> 4.5', '>= 4.5.1'
 gem 'rack-cors', '~>0.4', '>=0.4.0', :require => 'rack/cors'
-gem 'geokit-rails'
+gem 'geokit-rails', '~>2.2', '>=2.2.0'
 
 gem 'sass-rails', '~> 5.0', '>=3.4.22'
 gem 'uglifier', '~> 3.0', '>=3.0.2'

@@ -32,6 +32,24 @@
           return  AdService.getAllCategories();
         }]
       }      
+    }) 
+    .state("public.ads", {        
+      templateUrl: APP_CONFIG.home_page_html
+    })
+    .state("public.ads.child",{
+      url: "/",
+      views: {        
+        nav: 'navComponent',
+        content: 'mainComponent' 
+      },
+      resolve: {
+        latestAds: ["spa.home.AdService", function(AdService){
+          return AdService.getLatestAds();
+        }], 
+        mainCategory: ["spa.home.AdService", function(AdService){
+          return  AdService.getAllCategories();
+        }]
+      }      
     })        
     .state('public.ad', {
       url: "/ad/{id}" ,

@@ -10,8 +10,7 @@ Rails.application.routes.draw do
       resources :images, except: [:new, :edit]
     end
     resources :cities, except: [:new, :edit]
-    resources :locations, except: [:new, :edit]
-    resources :users, except: [:new, :edit]
+      resources :users, except: [:new, :edit]
 end
 
   mount_devise_token_auth_for 'User', at: 'auth'

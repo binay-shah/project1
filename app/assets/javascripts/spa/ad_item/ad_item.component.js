@@ -42,7 +42,7 @@
     }
 
     function openMapModal(){
-     $ctrl.mapModalShown = !$ctrl.mapModalShown;
+     $ctrl.mapModalShown = !$ctrl.mapModalShown;     
     }
 
     
